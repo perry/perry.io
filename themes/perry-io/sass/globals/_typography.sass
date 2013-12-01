@@ -1,0 +1,46 @@
+@include font-face("notoserif", "notoserif", "notoserif", "serif")
+
+@include font-face("oxygen", "oxygen", "oxygen", "sans-serif")
+@include font-face("oxygen-light", "oxygen-light", "oxygen", "sans-serif")
+@include font-face("oxygen-bold", "oxygen-bold", "oxygen", "sans-serif")
+
+body
+    @extend %notoserif
+    font:
+        size: 16px
+    line-height: 1.4
+    color: $grey
+
+.header
+    .structure
+        padding:
+            top: 3em
+            bottom: 3em
+
+.branding
+    @extend %oxygen
+    font:
+        size: 30px
+    line-height: 1
+    text:
+        transform: uppercase
+    span
+        @extend %oxygen-light
+    a
+        color: $grey
+        &:hover
+            border: 0
+
+a
+    color: $brand
+    text:
+        decoration: none
+    &:hover
+        color: $brand-dark
+        border:
+            bottom: 1px solid
+        @include transition(color 0.2s ease-in)
+
+p
+    margin:
+        bottom: 0.5em

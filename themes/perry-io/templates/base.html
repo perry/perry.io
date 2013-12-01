@@ -1,11 +1,22 @@
 <!doctype html>
 <html>
     <head>
-        <title></title>
+        <title>{% block title %}{% endblock title %} - Perry Roper</title>
         <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/main.css" rel="stylesheet">
     </head>
 
     <body>
-        {% block content %}{% endblock content %}
+        <div class="header">
+            <div class="structure">
+                {% block header %}
+                    <h1 class="branding"><a href="{{ SITEURL }}">Perry <span>Roper</span></a></h1>
+                {% endblock header%}
+            </div>
+        </div>
+        <div class="main">
+            <div class="structure">
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
     </body>
 </html>
