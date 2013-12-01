@@ -79,5 +79,5 @@ deploy:
 		make s3_upload; \
 		rm -rf $(PUBLISHDIR); \
 	else \
-		echo Working directory is dirty >&2; \
+		echo Please commit all changes before deploying. >&2; \
 	fi
