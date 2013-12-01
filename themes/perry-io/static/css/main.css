@@ -112,33 +112,43 @@ body {
   color: #252525;
 }
 
-/* line 15, ../../sass/globals/_typography.sass */
+/* line 16, ../../sass/globals/_typography.sass */
 .header .structure {
   padding-top: 3em;
   padding-bottom: 3em;
 }
 
-/* line 20, ../../sass/globals/_typography.sass */
+/* line 21, ../../sass/globals/_typography.sass */
+.header-image {
+  font-size: 0;
+}
+
+/* line 25, ../../sass/globals/_typography.sass */
+img {
+  max-width: 100%;
+}
+
+/* line 28, ../../sass/globals/_typography.sass */
 .branding {
   font-size: 30px;
   line-height: 1;
   text-transform: uppercase;
 }
-/* line 29, ../../sass/globals/_typography.sass */
+/* line 37, ../../sass/globals/_typography.sass */
 .branding a {
   color: #252525;
 }
-/* line 31, ../../sass/globals/_typography.sass */
+/* line 39, ../../sass/globals/_typography.sass */
 .branding a:hover {
   border: 0;
 }
 
-/* line 34, ../../sass/globals/_typography.sass */
+/* line 42, ../../sass/globals/_typography.sass */
 a {
   color: #2f90c4;
   text-decoration: none;
 }
-/* line 38, ../../sass/globals/_typography.sass */
+/* line 46, ../../sass/globals/_typography.sass */
 a:hover {
   color: #25729b;
   border-bottom: 1px solid;
@@ -148,7 +158,7 @@ a:hover {
   transition: color 0.2s ease-in;
 }
 
-/* line 44, ../../sass/globals/_typography.sass */
+/* line 52, ../../sass/globals/_typography.sass */
 p {
   margin-bottom: 0.5em;
 }

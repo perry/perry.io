@@ -7,6 +7,10 @@
 
     <body>
         <div class="header">
+            <div class="header-image">
+                <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/header.jpg">
+            </div>
+
             <div class="structure">
                 {% block header %}
                     <h1 class="branding"><a href="{{ SITEURL }}">Perry <span>Roper</span></a></h1>
@@ -16,6 +20,10 @@
         <div class="main">
             <div class="structure">
                 {% block content %}{% endblock content %}
+            </div>
+        </div>
+        <div class="footer">
+            <div class="structure">
             </div>
         </div>
     </body>
