@@ -19,5 +19,20 @@ DEFAULT_PAGINATION = 10
 
 THEME = 'themes/perry-io'
 
+ARTICLE_URL = '{slug}/'
+ARTICLE_SAVE_AS = '{slug}/index.html'
+
+PAGE_URL = '{slug}/'
+PAGE_SAVE_AS = '{slug}/index.html'
+
+AUTHOR_URL = 'author/{name}/'
+AUTHOR_SAVE_AS = 'author/{name}/index.html'
+
+CATEGORY_URL = '{name}/'
+CATEGORY_SAVE_AS = '{name}/index.html'
+
+TAG_URL = 'tag/{name}/'
+TAG_SAVE_AS = 'tag/{name}/index.html'
+
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
