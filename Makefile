@@ -5,6 +5,7 @@ PELICANOPTS=
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
+PUBLISHDIR=$(BASEDIR)/publish
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
@@ -60,7 +61,19 @@ stopserver:
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
 publish:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+	$(PELICAN) $(INPUTDIR) -o $(PUBLISHDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
-s3_upload: publish
-	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed
+s3_upload:
+	make publish
+	s3cmd sync $(PUBLISHDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed
+
+deploy:
+	@status=$$(git status --porcelain); \
+	if test "x$${status}" = x; then \
+		git pull; \
+		git push; \
+		make s3_upload; \
+		rm -rf $(PUBLISHDIR); \
+	else \
+		echo Working directory is dirty >&2; \
+	fi
