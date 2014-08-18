@@ -102,20 +102,9 @@ small
     height: 180px
     @include border-radius(180px)
     overflow: hidden
-    border: 1px solid transparent
-    position: relative
-    z-index: 10
     img
-        @include transform(scale(1.02), translate3d(0, 0, 0))
-        @include transition(transform 500ms ease-in-out)
         max-width: 100%
         height: auto
-        position: absolute
-        top: 0
-        left: 0
-        z-index: 0
-        &:hover
-            @include transform(scale(1))
 
 .title
     text:
