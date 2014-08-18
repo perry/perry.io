@@ -1,6 +1,4 @@
-BASE_DIR=$(CURDIR)
-DIST_DIR=$(BASEDIR)/dist
-
+DIST_DIR=dist
 S3_BUCKET=perry.io
 
 build:
