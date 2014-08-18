@@ -170,6 +170,14 @@ module.exports = function (grunt) {
                 }
             }
         },
+        inline: {
+            dist: {
+                options:{
+                    tag: ''
+                },
+                src: ['dist/index.html']
+            }
+        }
     });
 
     grunt.registerTask('default', 'dev');
@@ -197,6 +205,7 @@ module.exports = function (grunt) {
             'uglify',
             'rev',
             'usemin',
+            'inline',
             'htmlmin'
         ]);
     });
