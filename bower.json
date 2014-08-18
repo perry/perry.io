@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "normalize-css": "~3.0.1"
+    "sass-font-face": "https://github.com/perry/sass-font-face.git#6a64a89418192af07e3f809a38d47b4f6dce6ffn4",
+    "css-reset": "https://github.com/jasonkarns/css-reset.git#ffb7bab55669e71d131acb995e39cfbfc6c888c3"
   }
 }

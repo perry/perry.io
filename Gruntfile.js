@@ -14,6 +14,7 @@ module.exports = function (grunt) {
         config: {
             app: 'app',
             dist: 'dist',
+            lib: 'app/lib',
             htmlmin: {
                 collapseBooleanAttributes: true,
                 collapseWhitespace: true,
@@ -61,6 +62,7 @@ module.exports = function (grunt) {
                 generatedImagesDir: '<%= config.app %>/images/generated',
                 fontsDir: '<%= config.app %>/fonts',
                 relativeAssets: true,
+                importPath: '<%= config.lib %>/sass-font-face',
                 debugInfo: false
             },
             dev: {

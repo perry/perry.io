@@ -8,42 +8,76 @@
         <title>Perry Roper</title>
 
         <!-- build:css styles/main.css -->
-            <link href="lib/normalize-css/normalize.css" rel="stylesheet">
+            <link href="lib/css-reset/reset.css" rel="stylesheet">
             <link href="styles/main.css" rel="stylesheet">
         <!-- endbuild -->
+
+        <link rel="shortcut icon" href="/favicon.ico">
     </head>
 
     <body>
+        <div class="above-fold">
+            <div class="structure">
+                <div class="fade-down heading">
+                    <div class="perry">
+                        <img src="images/perry.jpg" width="200" height="200">
+                    </div>
+                    <h1 class="title">Perry Roper</h1>
+                </div>
 
-        <h1>Perry Roper</h1>
-        <p>
-            Front-end engineer at <a href="http://incuna.com/">Incuna</a>, in <abbr title="Who am I kidding? It's not sunny.">sunny</abbr> Oxford, England.<br>
-            Helps people travel with their bikes at <a href="http://oxbikebox.com">OxBikeBox</a>.<br>
-            Conquers <a href="http://www.strava.com/activities/77444033">mountains</a> on his <a href="http://www.strava.com/athletes/perryroper">bike</a>.<br>
-        </p>
+                <p class="fade-in description">
+                Front-end engineer at <a href="http://incuna.com/">Incuna</a>.<br>
+                Builds web and mobile apps with AngularJS.<br>
+                Founder of <a href="http://oxbikebox.com">OxBikeBox</a>.<br>
+                Climbs <a href="https://www.strava.com/activities/77444033">mountains</a> on his <a href="https://www.strava.com/athletes/perryroper">bike</a>.<br>
+                </p>
+            </div>
+        </div>
 
-        <h2>Open source projects</h2>
+        <div class="below-fold fade-in">
+            <div class="structure">
+                <h2>Open source</h2>
 
-        <h3>AngularJS</h3>
-        <ul>
-            <li>
-                <a href="https://github.com/incuna/djangular-rest-framework">djangular-rest-framework</a><small> - An interface for Django Rest Framework.</small>
-            </li>
-            <li>
-                <a href="https://github.com/incuna/angular-reverse-url">angular-reverse-url</a><small> - URL reversing based on route controllers or names.</small>
-            </li>
-            <li>
-                <a href="https://github.com/incuna/angular-registration">angular-registration</a><small> - </small>
-            </li>
-            <li>
-                <a href="https://github.com/incuna/angular-bind-html-compile">angular-bind-html-compile</a><small> - </small>
-            </li>
-            <li>
-                <a href="https://github.com/incuna/angular-feincms">angular-feincms</a><small> - </small>
-            </li>
-            <li>
-                <a href="https://github.com/incuna/angular-flowplayer">angular-flowplayer</a><small> - </small>
-            </li>
-        </li>
+                <h3>AngularJS</h3>
+                <ul class="project-list">
+                    <li>
+                        <a href="https://github.com/incuna/djangular-rest-framework">djangular-rest-framework</a> <small>- An interface for Django Rest Framework.</small>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/incuna/angular-reverse-url">angular-reverse-url</a> <small>- URL reversing based on route controllers or names.</small>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/incuna/angular-registration">angular-registration</a> <small>- a library to interface a registration/user API.</small>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/incuna/angular-bind-html-compile">angular-bind-html-compile</a> <small>- a directive that calls <code>$compile</code> on trusted HTML, allowing directives in an API response.</small>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/incuna/angular-feincms">angular-feincms</a> <small>- a set of directives to for FeinCMS.</small>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/incuna/angular-flowplayer">angular-flowplayer</a> <small>- a directive render Flowplayer videos.</small>
+                    </li>
+                </ul>
+
+                <h3>Sass</h3>
+                <ul>
+                    <li>
+                    <a href="https://github.com/perry/sass-font-face">sass-font-face</a> <small>- a mixin to generate bullet-proof <code>@font-face</code> declarations.</small>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer fade-in">
+            <div class="structure">
+                <p>Source available on <a href="https://github.com/perry/perry.io">GitHub</a>. Follow me on <a href="https://twitter.com/perryroper">Twitter</a> and <a href="https://strava.com/athletes/perryroper">Strava</a>. If you'd like to get in touch send me an <a href="mailto:perryroper@gmail.com">email</a>.</p>
+            </div>
+        </div>
     </body>
 </html>
