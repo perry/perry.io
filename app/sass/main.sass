@@ -23,7 +23,7 @@ $sans-serif: Helvetica, Arial, sans-serif
 .fade-down
     opacity: 0
     @include transform(translate3d(0, -15%, 0))
-    @include animation(fade-down 2000ms ease-out)
+    @include animation(fade-down 1000ms ease-out)
     @include animation-fill-mode(forwards)
 
 .fade-in
@@ -131,7 +131,7 @@ small
 
 .below-fold,
 .footer
-    @include animation-delay(2500ms)
+    @include animation-delay(2000ms)
 
 .below-fold
     @extend %container
