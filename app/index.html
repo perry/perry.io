@@ -96,9 +96,12 @@
         </div>
 
         <script>
-            ;(function() {
+            (function() {
                 var bLazy = new Blazy({
                     success: function () {
+                        document.body.className += ' images-loaded';
+                    },
+                    error: function () {
                         document.body.className += ' images-loaded';
                     }
                 });
