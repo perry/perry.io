@@ -1,6 +1,7 @@
 @import compass/css3
 @import sass-font-face
 
+$site-padding: 20px
 $link-color: #039be5
 
 $sans-serif: Helvetica, Arial, sans-serif
@@ -95,12 +96,12 @@ small
     .structure
         max-width: 80%
         margin: 0 auto
-        padding: 3rem 1rem
+        padding: (3 * $site-padding) $site-padding
         @media only screen and (min-device-width: 320px)
             max-width: 95%
             padding:
-                right: 0.5rem
-                left: 0.5rem
+                right: 0.5 * $site-padding
+                left: 0.5 * $site-padding
 
 
 .above-fold
@@ -108,7 +109,7 @@ small
 
 .perry
     margin: 0 auto
-        bottom: 2rem
+        bottom: 2 * $site-padding
     display: block
     width: 180px
     height: 180px
@@ -124,11 +125,11 @@ small
         transform: uppercase
     letter-spacing: 0.1em
     font:
-        size: 1.9rem
+        size: 1.9em
         weight: normal
     white-space: nowrap
     margin:
-        bottom: 2rem
+        bottom: 2 * $site-padding
 
 .description
     text:
@@ -136,9 +137,9 @@ small
 
 .project-list
     margin:
-        bottom: 2rem
+        bottom: 2 * $site-padding
     li
-        font-size: 1rem
+        font-size: 1em
 
 .below-fold
     @extend %container
@@ -147,7 +148,7 @@ small
 .footer
     @extend %container
     font:
-        size: 1rem
+        size: 1em
 
 a
     text-decoration: none
