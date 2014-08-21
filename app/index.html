@@ -14,11 +14,13 @@
             <link href="styles/main.css" rel="stylesheet">
         <!-- endbuild -->
 
+        <!--[if !(lte IE 8)]><!-->
         <!-- build:js scripts/app.js -->
             <script src="lib/modernizr/modernizr_custom.js"></script>
             <script src="lib/bLazy/blazy.js"></script>
             <script src="scripts/init.js"></script>
         <!-- endbuild -->
+        <!--<![endif]-->
 
         <link rel="shortcut icon" href="/favicon.ico">
     </head>
@@ -28,6 +30,7 @@
             <div class="structure">
                 <div class="fade-down heading">
                     <div class="perry">
+                        <!--[if !(lte IE 8)]><!-->
                         <img
                             class="b-lazy"
                             src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
@@ -36,6 +39,12 @@
                             width="180"
                             height="180"
                         >
+                        <!--<![endif]-->
+
+                        <!--[if lte IE 8]>
+                            <img src="/images/inline/perry-1x.jpg" alt="Perry Roper" width="180" height="180">
+                        <![endif]-->
+
                     </div>
                     <h1 class="title">Perry Roper</h1>
                 </div>
