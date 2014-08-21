@@ -36,6 +36,16 @@ $sans-serif: Helvetica, Arial, sans-serif
             @include animation(fade-in 700ms ease-in)
             @include animation-fill-mode(forwards)
 
+.heading
+    .cssanimations .images-loaded &
+        @include animation-delay(200ms)
+
+.description,
+.below-fold,
+.footer
+    .cssanimations .images-loaded &
+        @include animation-delay(1000ms)
+
 *
     @include box-sizing(border-box)
 
@@ -96,10 +106,6 @@ small
 .above-fold
     @extend %container
 
-.heading
-    .images-loaded &
-        @include animation-delay(500ms)
-
 .perry
     margin: 0 auto
         bottom: 2rem
@@ -127,19 +133,12 @@ small
 .description
     text:
         align: center
-    .cssanimations .images-loaded &
-        @include animation-delay(1500ms)
 
 .project-list
     margin:
         bottom: 2rem
     li
         font-size: 1rem
-
-.below-fold,
-.footer
-    .cssanimations .images-loaded &
-        @include animation-delay(1500ms)
 
 .below-fold
     @extend %container
