@@ -100,7 +100,7 @@ module.exports = function (grunt) {
                     src: [
                         '<%= config.dist %>/styles/**/*.css',
                         '<%= config.dist %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}',
-                        '!<%= config.dist %>/images/inline_html_images/**/*'
+                        '!<%= config.dist %>/images/inline/**/*'
                     ]
                 }
             }
