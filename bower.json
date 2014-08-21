@@ -17,6 +17,6 @@
   "dependencies": {
     "sass-font-face": "git@github.com:perry/sass-font-face.git#6a64a89418192af07e3f809a38d47b4f6dce6ff4",
     "css-reset": "git@github.com:jasonkarns/css-reset.git#ffb7bab55669e71d131acb995e39cfbfc6c888c3",
-    "bLazy": "git@github.com:dinbror/blazy.git#761042dd101ce803e47398407aab11b93e2cad32"
+    "bLazy": "git@github.com:perry/blazy.git#5b1928bdb2b0d5a7e89fd3d55d7593fccb90df5b"
   }
 }
