@@ -23,13 +23,15 @@ $sans-serif: Helvetica, Arial, sans-serif
 .fade-down
     opacity: 0
     @include transform(translate3d(0, -15%, 0))
-    @include animation(fade-down 1000ms ease-out)
-    @include animation-fill-mode(forwards)
+    .images-loaded &
+        @include animation(fade-down 1000ms ease-out)
+        @include animation-fill-mode(forwards)
 
 .fade-in
     opacity: 0
-    @include animation(fade-in 700ms ease-in)
-    @include animation-fill-mode(forwards)
+    .images-loaded &
+        @include animation(fade-in 700ms ease-in)
+        @include animation-fill-mode(forwards)
 
 *
     @include box-sizing(border-box)
@@ -92,7 +94,8 @@ small
     @extend %container
 
 .heading
-    @include animation-delay(500ms)
+    .images-loaded &
+        @include animation-delay(500ms)
 
 .perry
     margin: 0 auto
@@ -121,7 +124,8 @@ small
 .description
     text:
         align: center
-    @include animation-delay(1500ms)
+    .images-loaded &
+        @include animation-delay(1500ms)
 
 .project-list
     margin:
@@ -131,7 +135,8 @@ small
 
 .below-fold,
 .footer
-    @include animation-delay(1500ms)
+    .images-loaded &
+        @include animation-delay(1500ms)
 
 .below-fold
     @extend %container

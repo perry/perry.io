@@ -20,7 +20,14 @@
             <div class="structure">
                 <div class="fade-down heading">
                     <div class="perry">
-                        <img src="/images/inline/perry-1x.jpg" width="180" height="180" alt="Perry Roper">
+                        <img
+                            class="b-lazy"
+                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                            data-src="images/inline/perry-1x.jpg | images/inline/perry-2x.jpg"
+                            alt="Perry Roper"
+                            width="180"
+                            height="180"
+                        >
                     </div>
                     <h1 class="title">Perry Roper</h1>
                 </div>
@@ -83,6 +90,20 @@
                 <p>Source available on <a href="https://github.com/perry/perry.io">GitHub</a>. Follow me on <a href="https://twitter.com/perryroper">Twitter</a> and <a href="https://strava.com/athletes/perryroper">Strava</a>. If you'd like to get in touch send me an <a href="mailto:perryroper@gmail.com">email</a>.</p>
             </div>
         </div>
+
+
+        <!-- build:js scripts/app.js -->
+            <script src="lib/bLazy/blazy.js"></script>
+        <!-- endbuild -->
+        <script>
+            ;(function() {
+                var bLazy = new Blazy({
+                    success: function () {
+                        document.body.className += ' images-loaded';
+                    }
+                });
+            })();
+        </script>
 
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
