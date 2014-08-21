@@ -20,18 +20,21 @@ $sans-serif: Helvetica, Arial, sans-serif
     100%
         opacity: 1
 
-.fade-down
-    opacity: 0
-    @include transform(translate3d(0, -15%, 0))
-    .images-loaded &
-        @include animation(fade-down 1000ms ease-out)
-        @include animation-fill-mode(forwards)
+.cssanimations
+    .fade-down
+        opacity: 0
+        @include transform(translate3d(0, -15%, 0))
+    .fade-in
+        opacity: 0
 
-.fade-in
-    opacity: 0
-    .images-loaded &
-        @include animation(fade-in 700ms ease-in)
-        @include animation-fill-mode(forwards)
+    .images-loaded
+        .fade-down
+            @include animation(fade-down 1000ms ease-out)
+            @include animation-fill-mode(forwards)
+
+        .fade-in
+            @include animation(fade-in 700ms ease-in)
+            @include animation-fill-mode(forwards)
 
 *
     @include box-sizing(border-box)
@@ -124,7 +127,7 @@ small
 .description
     text:
         align: center
-    .images-loaded &
+    .cssanimations .images-loaded &
         @include animation-delay(1500ms)
 
 .project-list
@@ -135,7 +138,7 @@ small
 
 .below-fold,
 .footer
-    .images-loaded &
+    .cssanimations .images-loaded &
         @include animation-delay(1500ms)
 
 .below-fold

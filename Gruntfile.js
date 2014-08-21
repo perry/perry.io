@@ -24,6 +24,29 @@ module.exports = function (grunt) {
                 removeScriptTypeAttributes: true,
                 removeStyleLinkTypeAttributes: true,
                 useShortDoctype: true
+            },
+        },
+        modernizrFiles: [
+            '<%= config.app %>/styles/**/*.css'
+        ],
+        modernizr: {
+            app: {
+                devFile: '<%= config.lib %>/modernizr/modernizr.js',
+                outputFile: '<%= config.lib %>/modernizr/modernizr_custom.js',
+                files: {
+                    src: '<%= modernizrFiles %>'
+                },
+                extra: {
+                    shiv: false,
+                    load: false,
+                    cssclasses: true
+                }
+            }
+        },
+        watch: {
+            modernizr: {
+                files: '<%= modernizrFiles %>',
+                tasks: 'modernizr'
             }
         },
         concurrent: {
@@ -31,6 +54,7 @@ module.exports = function (grunt) {
                 logConcurrentOutput: true
             },
             dev: [
+                'watch',
                 'compass:watch'
             ]
         },
@@ -47,11 +71,6 @@ module.exports = function (grunt) {
                 options: {
                     base: '<%= config.dist %>'
                 }
-            }
-        },
-        open: {
-            server: {
-                url: 'http://localhost:<%= connect.options.port %>'
             }
         },
         compass: {
@@ -188,8 +207,8 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:dev',
             'compass:dev',
+            'modernizr',
             'connect:dev',
-            'open',
             'concurrent:dev'
         ]);
     });
@@ -198,6 +217,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean',
             'compass:dev',
+            'modernizr',
             'useminPrepare',
             'copy:dist',
             'concat:generated',
