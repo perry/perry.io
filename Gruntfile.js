@@ -211,5 +211,14 @@ module.exports = function (grunt) {
             'htmlmin'
         ]);
     });
+
+    grunt.registerTask('dist', function (locale) {
+        grunt.task.run([
+            'build',
+            'connect:dist',
+            'concurrent:dev'
+        ]);
+    });
+
 };
 
