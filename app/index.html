@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Pezwald Buttercup</title>
+        <title>Perry Roper</title>
 
         <!-- build:css styles/main.css -->
             <link href="lib/css-reset/reset.css" rel="stylesheet">
@@ -22,7 +22,10 @@
                     <div class="perry">
                         <img src="images/perry.jpg" width="200" height="200">
                     </div>
-                    <h1 class="title">Pezwald Buttercup</h1>
+                    <h1 class="title konami">
+                        <span class="konami-hide">Perry Roper</span>
+                        <span class="konami-show">Pezwald Buttercup</span>
+                    </h1>
                 </div>
 
                 <p class="fade-in description">
@@ -83,6 +86,28 @@
                 <p>Source available on <a href="https://github.com/perry/perry.io">GitHub</a>. Follow me on <a href="https://twitter.com/perryroper">Twitter</a> and <a href="https://strava.com/athletes/perryroper">Strava</a>. If you'd like to get in touch send me an <a href="mailto:perryroper@gmail.com">email</a>.</p>
             </div>
         </div>
+
+        <script type="text/javascript" src="plugins/konami.js"></script>
+        <script type="text/javascript">
+        // Easter egg from entering Konami code:
+        // up up down down left right left right b a
+        // Or on touch devices:
+        // up up down down left right left right tap tap tap
+        (function (Konami) {
+            function onKonamiCode () {
+                var konamiElements = document.getElementsByClassName('konami');
+                var i;
+                var el;
+                for (i = 0; i < konamiElements.length; i++) {
+                    el = konamiElements.item(i);
+                    el.classList.add('show');
+                }
+            }
+            var easterEgg = new Konami();
+            easterEgg.code = onKonamiCode;
+            easterEgg.load();
+        }(window.Konami));
+        </script>
 
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

@@ -153,3 +153,10 @@ a
     &:active
         color: darken($link-color, 30%)
 
+.konami
+    &:not(.show)
+        .konami-show
+            display: none
+    &.show
+        .konami-hide
+            display: none
