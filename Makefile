@@ -2,6 +2,9 @@ DIST_DIR=dist
 S3_BUCKET=perry.io
 
 install:
+	rbenv install --skip-existing
+	gem install bundler
+	bundle install
 	npm install
 	bower install
 
