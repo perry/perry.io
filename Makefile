@@ -1,6 +1,10 @@
 DIST_DIR=dist
 S3_BUCKET=perry.io
 
+install:
+	npm install
+	bower install
+
 build:
 	grunt build
 
