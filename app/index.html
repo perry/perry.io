@@ -48,7 +48,10 @@
                         <![endif]-->
 
                     </div>
-                    <h1 class="title">Perry Roper</h1>
+                    <h1 class="title konami">
+                        <span class="konami-hide">Perry Roper</span>
+                        <span class="konami-show">Pezwald Buttercup</span>
+                    </h1>
                 </div>
 
                 <p class="fade-in description">
@@ -112,6 +115,28 @@
                 </p>
             </div>
         </div>
+
+        <script type="text/javascript" src="plugins/konami.js"></script>
+        <script type="text/javascript">
+        // Easter egg from entering Konami code:
+        // up up down down left right left right b a
+        // Or on touch devices:
+        // up up down down left right left right tap tap tap
+        (function (Konami) {
+            function onKonamiCode () {
+                var konamiElements = document.getElementsByClassName('konami');
+                var i;
+                var el;
+                for (i = 0; i < konamiElements.length; i++) {
+                    el = konamiElements.item(i);
+                    el.classList.add('show');
+                }
+            }
+            var easterEgg = new Konami();
+            easterEgg.code = onKonamiCode;
+            easterEgg.load();
+        }(window.Konami));
+        </script>
 
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
