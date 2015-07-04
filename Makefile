@@ -2,9 +2,6 @@ DIST_DIR=dist
 S3_BUCKET=perry.io
 
 install:
-	rbenv install --skip-existing
-	gem install bundler
-	bundle install
 	npm install
 	bower install
 
@@ -25,3 +22,9 @@ deploy:
 		echo Please commit all changes before deploying. >&2; \
 	fi
 
+
+styles:
+	./node_modules/stylus/bin/stylus -u nib app/stylus -o app/styles
+
+styles-watch:
+	./node_modules/stylus/bin/stylus -u nib app/stylus -o app/styles -w

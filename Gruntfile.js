@@ -47,6 +47,10 @@ module.exports = function (grunt) {
             modernizr: {
                 files: '<%= modernizrFiles %>',
                 tasks: 'modernizr'
+            },
+            stylus: {
+                files: '<%= config.app %>/stylus/*.styl',
+                tasks: 'stylus:dev'
             }
         },
         concurrent: {
@@ -54,8 +58,7 @@ module.exports = function (grunt) {
                 logConcurrentOutput: true
             },
             dev: [
-                'watch',
-                'compass:watch'
+                'watch'
             ]
         },
         connect: {
@@ -73,28 +76,18 @@ module.exports = function (grunt) {
                 }
             }
         },
-        compass: {
+        stylus: {
             options: {
-                sassDir: '<%= config.app %>/sass',
-                cssDir: '<%= config.app %>/styles',
-                imagesDir: '<%= config.app %>/images',
-                generatedImagesDir: '<%= config.app %>/images/generated',
-                fontsDir: '<%= config.app %>/fonts',
-                relativeAssets: true,
-                importPath: '<%= config.lib %>/sass-font-face',
-                debugInfo: false
+                use: ['nib']
             },
-            dev: {
-                options: {}
-            },
-            force: {
-                options: {
-                    force: true
+            compile: {
+                files: {
+                    '<%= config.app %>/styles/main.css': '<%= config.app %>/stylus/*.styl'
                 }
             },
-            watch: {
-                options: {
-                    watch: true
+            dev: {
+                files: {
+                    '<%= config.app %>/styles/main.css': '<%= config.app %>/stylus/*.styl'
                 }
             }
         },
@@ -206,7 +199,7 @@ module.exports = function (grunt) {
     grunt.registerTask('dev', function (locale) {
         grunt.task.run([
             'clean:dev',
-            'compass:dev',
+            'stylus:dev',
             'modernizr',
             'connect:dev',
             'concurrent:dev'
@@ -216,7 +209,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', function (locale) {
         grunt.task.run([
             'clean',
-            'compass:dev',
+            'stylus:compile',
             'modernizr',
             'useminPrepare',
             'copy:dist',
@@ -241,4 +234,3 @@ module.exports = function (grunt) {
     });
 
 };
-
