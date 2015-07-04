@@ -6,6 +6,7 @@ module.exports = function (grunt) {
     require('jit-grunt')(grunt, {
         // useminPrepare is a task of usemin.
         'useminPrepare': 'grunt-usemin',
+        's3': 'grunt-aws',
     });
 
     require('time-grunt')(grunt);
@@ -75,6 +76,18 @@ module.exports = function (grunt) {
                     base: '<%= config.dist %>'
                 }
             }
+        },
+        s3: {
+            options: {
+                accessKeyId: process.env.AWS_KEY,
+                secretAccessKey: process.env.AWS_SECRET_KEY,
+                bucket: process.env.AWS_BUCKET,
+                region: process.env.AWS_REGION
+            },
+            live: {
+                cwd: 'dist/',
+                src: '**'
+            },
         },
         stylus: {
             options: {
@@ -230,6 +243,13 @@ module.exports = function (grunt) {
             'build',
             'connect:dist',
             'concurrent:dev'
+        ]);
+    });
+
+    grunt.registerTask('deploy', function () {
+        grunt.task.run([
+            'build',
+            's3:live'
         ]);
     });
 
