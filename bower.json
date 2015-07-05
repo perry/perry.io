@@ -15,7 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "bLazy": "git@github.com:perry/blazy.git#1.0.0",
+    "bLazy": "git://github.com/perry/blazy.git#1.0.0",
     "modernizr": "2.8.3"
   }
 }
