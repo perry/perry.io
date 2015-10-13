@@ -1,0 +1,1 @@
+!function(){document.addEventListener("DOMContentLoaded",function(){new Blazy})}();
