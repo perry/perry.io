@@ -145,6 +145,7 @@ module.exports = function (grunt) {
                         dest: '<%= config.dist %>',
                         src: [
                             'index.html',
+                            'CNAME',
                             '*.{ico,png,txt}',
                             'images/**/*.{png,jpg,jpeg,gif,webp,svg}',
                             '!images/*/sprite-files/*',
