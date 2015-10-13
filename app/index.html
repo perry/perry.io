@@ -7,8 +7,7 @@
 
         <title>Perry Roper</title>
 
-        <meta name="description" content="Front-end engineer. Builds web and mobile apps with AngularJS. Founder of OxBikeBox.">
-
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet" type="text/css">
         <!-- build:css styles/main.css -->
             <link href="lib/normalize-css/normalize.css" rel="stylesheet">
             <link href="styles/main.css" rel="stylesheet">
@@ -22,92 +21,42 @@
             <!-- endbuild -->
         <!--<![endif]-->
 
-        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="shortcut icon" href="/favicon-2015.ico">
     </head>
 
     <body>
-        <div class="above-fold">
-            <div class="structure">
-                <div class="fade-down heading">
-                    <div class="perry">
-                        <!-- Hide the bLazy image from IE8 and belowm but provide a fallback. -->
-                        <!--[if !(lte IE 8)]><!-->
-                            <img
-                                class="b-lazy"
-                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-                                data-src="images/inline/perry-1x.jpg | images/inline/perry-2x.jpg"
-                                alt="Perry Roper"
-                                width="180"
-                                height="180"
-                            >
-                        <!--<![endif]-->
+        <div class="wrapper">
+            <div class="header">
+                <div class="image-wrapper">
+                    <!-- Hide the bLazy image from IE8 and below but provide a fallback. -->
+                    <!--[if !(lte IE 8)]><!-->
+                        <img
+                            class="b-lazy"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-src="images/perry-1x.jpg | images/perry-2x.jpg"
+                            alt="Perry Roper"
+                            width="300"
+                            height="300"
+                        >
+                    <!--<![endif]-->
 
-                        <!--[if lte IE 8]>
-                            <img src="/images/inline/perry-1x.jpg" alt="Perry Roper" width="180" height="180">
-                        <![endif]-->
-
-                    </div>
-                    <h1 class="title">Perry Roper</h1>
+                    <!--[if lte IE 8]>
+                        <img src="/images/perry-1x.jpg" alt="Perry Roper" width="300" height="300">
+                    <![endif]-->
                 </div>
-
-                <p class="fade-in description">
-                Director at <a href="https://peroshi.com">Peroshi</a> and founder of <a href="https://oxbikebox.com">OxBikeBox</a>.<br>
-                Climbs <a href="https://www.strava.com/activities/77444033">mountains</a> on <a href="https://www.strava.com/athletes/perryroper">bikes</a>.<br>
-                </p>
+                
+                <h1>Perry Roper</h1>
             </div>
-        </div>
 
-        <div class="below-fold fade-in">
-            <div class="structure">
-                <h2>Open source</h2>
-
-                <h3>AngularJS</h3>
-                <ul class="project-list">
-                    <li>
-                        <a href="https://github.com/incuna/djangular-rest-framework">djangular-rest-framework</a> <small>- an interface for Django REST Framework.</small>
-                    </li>
-
-                    <li>
-                        <a href="https://github.com/incuna/angular-token-auth">angular-token-auth</a> <small>- services and HTTP interceptor for token based HTTP authentication.</small>
-                    </li>
-
-                    <li>
-                        <a href="https://github.com/incuna/angular-reverse-url">angular-reverse-url</a> <small>- URL reversing based on route controllers or names.</small>
-                    </li>
-
-                    <li>
-                        <a href="https://github.com/incuna/angular-user-management">angular-user-management</a> <small>- a library to interface a registration/user API.</small>
-                    </li>
-
-                    <li>
-                        <a href="https://github.com/incuna/angular-bind-html-compile">angular-bind-html-compile</a> <small>- a directive that calls <code>$compile</code> on trusted HTML, allowing directives in an API response.</small>
-                    </li>
-
-                    <li>
-                        <a href="https://github.com/incuna/angular-feincms">angular-feincms</a> <small>- a set of directives to for FeinCMS.</small>
-                    </li>
-
-                    <li>
-                        <a href="https://github.com/incuna/angular-flowplayer">angular-flowplayer</a> <small>- a directive to render Flowplayer videos.</small>
-                    </li>
-                </ul>
-
-                <h3>Sass</h3>
+            <div class="content">
+                <p>Hi, I'm Perry, a software engineer and entrepreneur living in the beautiful city of Chiang Mai. Founder of <a href="https://oxbikebox.com">OxBikeBox</a> and co-founder of <a href="https://peroshi.com">Peroshi Limited</a>.</p>
                 <ul>
-                    <li>
-                    <a href="https://github.com/perry/sass-font-face">sass-font-face</a> <small>- a mixin to generate bullet-proof <code>@font-face</code> declarations.</small>
-                    </li>
+                    <li><a href="mailto:perryroper@gmail.com">Email</a></li>
+                    <li><a href="https://www.strava.com/athletes/perryroper">Strava</a></li>
+                    <li><a href="https://github.com/perry">GitHub</a></li>
+                    <li><a href="https://twitter.com/perryroper">Twitter</a></li>
+                    <li><a href="https://instagram.com/perryroper">Instagram</a></li>
                 </ul>
-            </div>
-        </div>
-
-        <div class="footer fade-in">
-            <div class="structure">
-                <p>
-                    Source available on <a href="https://github.com/perry/perry.io">GitHub</a>.
-                    Follow me on <a href="https://twitter.com/perryroper">Twitter</a> and <a href="https://strava.com/athletes/perryroper">Strava</a>.
-                    If you'd like to get in touch send me an <a href="mailto:hello@perry.io">email</a>.
-                </p>
             </div>
         </div>
 

@@ -4,9 +4,6 @@
             document.body.className += ' images-loaded';
         };
 
-        var bLazy = new Blazy({
-            success: setBodyClass,
-            error: setBodyClass
-        });
+        var bLazy = new Blazy();
     });
 })();
