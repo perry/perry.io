@@ -27,28 +27,7 @@ module.exports = function (grunt) {
                 useShortDoctype: true
             },
         },
-        modernizrFiles: [
-            '<%= config.app %>/styles/**/*.css'
-        ],
-        modernizr: {
-            app: {
-                devFile: '<%= config.lib %>/modernizr/modernizr.js',
-                outputFile: '<%= config.lib %>/modernizr/modernizr_custom.js',
-                files: {
-                    src: '<%= modernizrFiles %>'
-                },
-                extra: {
-                    shiv: false,
-                    load: false,
-                    cssclasses: true
-                }
-            }
-        },
         watch: {
-            modernizr: {
-                files: '<%= modernizrFiles %>',
-                tasks: 'modernizr'
-            },
             stylus: {
                 files: '<%= config.app %>/stylus/*.styl',
                 tasks: 'stylus:dev'
@@ -213,7 +192,6 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:dev',
             'stylus:dev',
-            'modernizr',
             'connect:dev',
             'concurrent:dev'
         ]);
@@ -223,7 +201,6 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean',
             'stylus:compile',
-            'modernizr',
             'useminPrepare',
             'copy:dist',
             'concat:generated',
