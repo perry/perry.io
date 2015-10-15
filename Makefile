@@ -1,3 +1,4 @@
 deploy:
 	grunt build
-	./bin/deploy.sh
+	chmod +x app/lib/git-directory-deploy/deploy.sh
+	./app/lib/git-directory-deploy/deploy.sh
