@@ -5,8 +5,7 @@ module.exports = function (grunt) {
     // Use jit-grunt to only load necessary tasks for each invocation of grunt.
     require('jit-grunt')(grunt, {
         // useminPrepare is a task of usemin.
-        'useminPrepare': 'grunt-usemin',
-        's3': 'grunt-aws',
+        'useminPrepare': 'grunt-usemin'
     });
 
     require('time-grunt')(grunt);
@@ -27,28 +26,7 @@ module.exports = function (grunt) {
                 useShortDoctype: true
             },
         },
-        modernizrFiles: [
-            '<%= config.app %>/styles/**/*.css'
-        ],
-        modernizr: {
-            app: {
-                devFile: '<%= config.lib %>/modernizr/modernizr.js',
-                outputFile: '<%= config.lib %>/modernizr/modernizr_custom.js',
-                files: {
-                    src: '<%= modernizrFiles %>'
-                },
-                extra: {
-                    shiv: false,
-                    load: false,
-                    cssclasses: true
-                }
-            }
-        },
         watch: {
-            modernizr: {
-                files: '<%= modernizrFiles %>',
-                tasks: 'modernizr'
-            },
             stylus: {
                 files: '<%= config.app %>/stylus/*.styl',
                 tasks: 'stylus:dev'
@@ -76,18 +54,6 @@ module.exports = function (grunt) {
                     base: '<%= config.dist %>'
                 }
             }
-        },
-        s3: {
-            options: {
-                accessKeyId: process.env.AWS_KEY,
-                secretAccessKey: process.env.AWS_SECRET_KEY,
-                bucket: process.env.AWS_BUCKET,
-                region: process.env.AWS_REGION
-            },
-            live: {
-                cwd: 'dist/',
-                src: '**'
-            },
         },
         stylus: {
             options: {
@@ -179,6 +145,7 @@ module.exports = function (grunt) {
                         dest: '<%= config.dist %>',
                         src: [
                             'index.html',
+                            'CNAME',
                             '*.{ico,png,txt}',
                             'images/**/*.{png,jpg,jpeg,gif,webp,svg}',
                             '!images/*/sprite-files/*',
@@ -213,7 +180,6 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:dev',
             'stylus:dev',
-            'modernizr',
             'connect:dev',
             'concurrent:dev'
         ]);
@@ -223,7 +189,6 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean',
             'stylus:compile',
-            'modernizr',
             'useminPrepare',
             'copy:dist',
             'concat:generated',
@@ -243,13 +208,6 @@ module.exports = function (grunt) {
             'build',
             'connect:dist',
             'concurrent:dev'
-        ]);
-    });
-
-    grunt.registerTask('deploy', function () {
-        grunt.task.run([
-            'build',
-            's3:live'
         ]);
     });
 
