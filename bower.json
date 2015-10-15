@@ -15,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "bLazy": "git://github.com/perry/blazy.git#1.0.0",
     "normalize-css": "normalize.css#3.0.3"
   }
 }

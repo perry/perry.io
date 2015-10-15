@@ -13,14 +13,6 @@
             <link href="styles/main.css" rel="stylesheet">
         <!-- endbuild -->
 
-        <!-- Don't even bother running scripts in IE8 and below. It's not worth it. -->
-        <!--[if !(lte IE 8)]><!-->
-            <!-- build:js scripts/app.js -->
-                <script src="lib/bLazy/blazy.js"></script>
-                <script src="scripts/init.js"></script>
-            <!-- endbuild -->
-        <!--<![endif]-->
-
         <link rel="shortcut icon" href="/favicon-2015.ico">
     </head>
 
@@ -28,21 +20,12 @@
         <div class="wrapper">
             <div class="header">
                 <div class="image-wrapper">
-                    <!-- Hide the bLazy image from IE8 and below but provide a fallback. -->
-                    <!--[if !(lte IE 8)]><!-->
-                        <img
-                            class="b-lazy"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-src="images/inline/perry-1x.jpg | images/inline/perry-2x.jpg"
-                            alt="Perry Roper"
-                            width="300"
-                            height="300"
-                        >
-                    <!--<![endif]-->
-
-                    <!--[if lte IE 8]>
-                        <img src="/images/inline/perry-1x.jpg" alt="Perry Roper" width="300" height="300">
-                    <![endif]-->
+                    <img
+                        src="https://www.gravatar.com/avatar/5f97051969ba1dd0b58e2dff0da750ee.jpg?s=600"
+                        alt="Perry Roper"
+                        width="300"
+                        height="300"
+                    >
                 </div>
 
                 <h1>Perry Roper</h1>
