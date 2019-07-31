@@ -1,0 +1,70 @@
+@import 'nib'
+
+$site-padding = 40px
+$site-background = #fff
+$site-text = #222
+$link-color = #039be5
+$sans-serif =  -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+
+*
+    box-sizing: border-box
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b
+    font-weight: normal
+
+a
+    text-decoration: none
+    color: $link-color
+    transition: color 20ms ease-in
+    &:hover
+        border-bottom: 1px solid
+        color: darken($link-color, 20%)
+    &:active
+        color: darken($link-color, 30%)
+
+html,
+body
+    font-size: 16px
+
+body
+    background: $site-background
+    font-family: $sans-serif
+    line-height: 1.6
+    color: $site-text
+    padding: $site-padding
+    -webkit-font-smoothing: antialiased
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    -webkit-tap-highlight-color: none
+    min-height: 100vh
+    display: flex
+    align-items: center
+    justify-content: center
+
+.wrapper
+    flex: 1
+
+img
+    max-width: 100%
+    height: auto
+    border-radius: 1%
+
+.header
+    max-width: 300px
+    .image-wrapper
+        font-size: 0
+    h1
+        line-height: 1
+        white-space: nowrap
+        font-size: 2.5em
+
+.content
+    max-width: 600px
+    p
+        text-align: justify

@@ -1,0 +1,13 @@
+{
+  "name": "git-directory-deploy",
+  "homepage": "https://github.com/X1011/git-directory-deploy",
+  "_release": "e37ac94cda",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e37ac94cda4bfc5773c0f01d89d8c875a21ab4f9"
+  },
+  "_source": "git@github.com:X1011/git-directory-deploy.git",
+  "_target": "*",
+  "_originalSource": "git@github.com:X1011/git-directory-deploy.git"
+}
