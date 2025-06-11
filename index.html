@@ -1,143 +1,340 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Perry Roper</title>
+        <!-- SEO Meta Tags -->
+        <title>Perry Roper - Founder. Builder. Father-to-be.</title>
+        <meta name="description" content="Perry Roper is the founder of WashDrop, one of Thailand's largest and most trusted laundry delivery services, serving thousands across Bangkok and Chiang Mai.">
+        <meta name="author" content="Perry Roper">
+        <meta name="robots" content="index, follow">
 
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet" type="text/css">
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://perry.io/">
+        <meta property="og:title" content="Perry Roper - Founder. Builder. Father-to-be.">
+        <meta property="og:description" content="Perry Roper is the founder of WashDrop, one of Thailand's largest and most trusted laundry delivery services, serving thousands across Bangkok and Chiang Mai.">
+        <meta property="og:image" content="https://www.gravatar.com/avatar/5f97051969ba1dd0b58e2dff0da750ee.jpg?s=1200">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="1200">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://perry.io/">
+        <meta property="twitter:title" content="Perry Roper - Founder. Builder. Father-to-be.">
+        <meta property="twitter:description" content="Perry Roper is the founder of WashDrop, one of Thailand's largest and most trusted laundry delivery services, serving thousands across Bangkok and Chiang Mai.">
+        <meta property="twitter:image" content="https://www.gravatar.com/avatar/5f97051969ba1dd0b58e2dff0da750ee.jpg?s=1200">
+        <meta property="twitter:creator" content="@perryroper">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="https://www.gravatar.com/avatar/5f97051969ba1dd0b58e2dff0da750ee.png?s=32">
+        <link rel="apple-touch-icon" href="https://www.gravatar.com/avatar/5f97051969ba1dd0b58e2dff0da750ee.png?s=180">
+
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+        <!-- Custom CSS -->
         <style>
-            html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+            :root {
+                --primary-color: #039be5;
+                --primary-hover: #0288d1;
+                --text-color: #2c3e50;
+                --text-muted: #6c757d;
+                --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                --card-shadow: 0 10px 40px rgba(0,0,0,0.1);
+                --card-hover-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            }
 
-            *{
-                -webkit-box-sizing:border-box;
-                -moz-box-sizing:border-box;
-                box-sizing:border-box
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                line-height: 1.7;
+                color: var(--text-color);
+                background: #f8f9fa;
+                min-height: 100vh;
+                padding: 2rem 0;
             }
-            h1,h2,h3,h4,h5,h6,strong,b{
-                font-weight:normal
+
+            .main-card {
+                background: white;
+                border-radius: 20px;
+                box-shadow: var(--card-shadow);
+                transition: all 0.3s ease;
+                overflow: hidden;
+                max-width: 900px;
+                margin: 0 auto;
             }
-            a{
-                text-decoration:none;
-                color:#039be5;
-                -webkit-transition:color 20ms ease-in;
-                -moz-transition:color 20ms ease-in;
-                -o-transition:color 20ms ease-in;
-                -ms-transition:color 20ms ease-in;
-                transition:color 20ms ease-in;
+
+            .main-card:hover {
+                box-shadow: var(--card-hover-shadow);
+                transform: translateY(-5px);
             }
-            a:hover{
-                border-bottom:1px solid;
-                color:#027cb7
+
+            .profile-section {
+                background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+                padding: 3rem;
+                text-align: center;
+                border-bottom: 1px solid #e9ecef;
             }
-            a:active{
-                color:#026ca0
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                margin: 0 auto 1.5rem;
+                border: 4px solid white;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+                transition: transform 0.3s ease;
             }
-            html,body{
-                font-size:16px
+
+            .profile-image:hover {
+                transform: scale(1.05);
             }
-            body{
-                background:#fff;
-                font-family:-apple-system,'Helvetica Neue','Helvetica','Arial',sans-serif;
-                line-height:1.6;
-                color:#222;
-                padding:40px;
-                -webkit-font-smoothing:antialiased;
-                -webkit-tap-highlight-color:rgba(0,0,0,0);
-                -webkit-tap-highlight-color:none;
-                min-height:100vh;
-                display:-webkit-box;
-                display:-moz-box;
-                display:-webkit-flex;
-                display:-ms-flexbox;
-                display:box;
-                display:flex;
-                -webkit-box-align:center;
-                -moz-box-align:center;
-                -o-box-align:center;
-                -ms-flex-align:center;
-                -webkit-align-items:center;
-                align-items:center;
-                -webkit-box-pack:center;
-                -moz-box-pack:center;
-                -o-box-pack:center;
-                -ms-flex-pack:center;
-                -webkit-justify-content:center;
-                justify-content:center
+
+            .profile-name {
+                font-size: 2.5rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                color: var(--text-color);
             }
-            .wrapper{
-                -webkit-box-flex:1;
-                -moz-box-flex:1;
-                -o-box-flex:1;
-                box-flex:1;
-                -webkit-flex:1;
-                -ms-flex:1;
-                flex:1
+
+            .profile-tagline {
+                font-size: 1.1rem;
+                color: var(--text-muted);
+                font-weight: 300;
             }
-            img{
-                max-width:100%;
-                height:auto;
-                -webkit-border-radius:1%;
-                border-radius:1%
+
+            .content-section {
+                padding: 3rem;
             }
-            .header{
-                max-width:300px;
+
+            .bio-text {
+                font-size: 1.1rem;
+                line-height: 1.8;
+                margin-bottom: 2rem;
+                text-align: justify;
             }
-            .header .image-wrapper{
-                font-size:0
+
+            .social-links {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-bottom: 3rem;
             }
-            .header h1{
-                line-height:1;
-                white-space:nowrap;
-                font-size:2.5em
+
+            .social-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.75rem 1.5rem;
+                background: var(--primary-color);
+                color: white;
+                text-decoration: none;
+                border-radius: 50px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                font-size: 0.95rem;
             }
-            .content{
-                max-width:600px;
+
+            .social-link:hover {
+                background: var(--primary-hover);
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(3, 155, 229, 0.4);
             }
-            .content p{
-                text-align:justify
+
+            .section-title {
+                font-size: 1.3rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                color: var(--text-color);
+                border-bottom: 2px solid var(--primary-color);
+                padding-bottom: 0.5rem;
+                display: inline-block;
             }
+
+            .tools-list {
+                list-style: none;
+                padding: 0;
+            }
+
+            .tools-list li {
+                padding: 0.75rem 0;
+                border-bottom: 1px solid #f1f3f4;
+            }
+
+            .tools-list li:last-child {
+                border-bottom: none;
+            }
+
+            .tools-list a {
+                color: var(--primary-color);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s ease;
+            }
+
+            .tools-list a:hover {
+                color: var(--primary-hover);
+            }
+
+            @media (max-width: 768px) {
+                body {
+                    padding: 1rem 0;
+                }
+
+                .profile-section,
+                .content-section {
+                    padding: 2rem 1.5rem;
+                }
+
+                .profile-name {
+                    font-size: 2rem;
+                }
+
+                .social-links {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .bio-text {
+                    text-align: left;
+                }
+            }
+
 
         </style>
 
-        <link rel="shortcut icon" type="image/png" href="https://www.gravatar.com/avatar/5f97051969ba1dd0b58e2dff0da750ee.png?s=32">
-
+        <!-- Analytics -->
         <script defer data-domain="perry.io" src="https://a.wshlp.net/js/script.js"></script>
+
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Perry Roper",
+            "url": "https://perry.io",
+            "image": "https://www.gravatar.com/avatar/5f97051969ba1dd0b58e2dff0da750ee.jpg?s=600",
+            "sameAs": [
+                "https://x.com/perryroper",
+                "https://instagram.com/perryroper",
+                "https://github.com/perry"
+            ],
+            "jobTitle": "Founder",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "WashDrop"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Chiang Mai",
+                "addressCountry": "Thailand"
+            },
+            "description": "Founder of WashDrop, one of Thailand's largest and most trusted laundry delivery services, serving thousands across Bangkok and Chiang Mai."
+        }
+        </script>
     </head>
 
     <body>
-        <div class="wrapper">
-            <div class="header">
-                <div class="image-wrapper">
+        <div class="container">
+            <div class="main-card">
+                <!-- Profile Section -->
+                <div class="profile-section">
                     <img
                         src="https://www.gravatar.com/avatar/5f97051969ba1dd0b58e2dff0da750ee.jpg?s=600"
-                        alt="Perry Roper"
-                        width="300"
-                        height="300"
+                        alt="Perry Roper - Entrepreneur and Developer"
+                        class="profile-image"
+                        width="150"
+                        height="150"
+                        loading="lazy"
                     >
+                    <h1 class="profile-name">Perry Roper</h1>
+                    <p class="profile-tagline">Founder. Builder. Father-to-be.</p>
                 </div>
 
-                <h1>Perry Roper</h1>
-            </div>
+                <!-- Content Section -->
+                <div class="content-section">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                                                        <p class="bio-text">
+                                Over a decade ago, I left the UK in search of warmer climes (I wouldn't be British if I didn't mention the weather, right?) and settled in Chiang Mai, Thailand. Not long after, I started WashDrop—now one of Thailand's largest and most trusted laundry delivery services.
+                            </p>
 
-            <div class="content">
-                <p>Hey there! I'm Perry. After deciding the UK was far too cold for me, I moved 7 timezones east, to the gorgeous city of Chiang Mai, Thailand.</p>
-                <!--<p>I'm currently building Washloop, <a href="https://www.washloop.com">software to run your laundry and dry cleaning business</a>, and WashDrop, the best way to get your <a href="https://www.washdrop.com/laundry-bangkok/">laundry in Bangkok</a> and <a href="https://www.washdrop.com/laundry-chiang-mai/">laundry in Chiang Mai</a> done, with more locations in SE Asia coming soon.</p>-->
-                <p>I'm currently building WashDrop, the best way to get your <a href="https://www.washdrop.com/laundry-bangkok/">laundry in Bangkok</a> and <a href="https://www.washdrop.com/laundry-chiang-mai/">laundry in Chiang Mai</a> done, with more locations in SE Asia coming soon.</p>
-                <ul>
-                    <li><a href="mailto:hello@perry.io">Email</a></li>
-                    <li><a href="https://x.com/perryroper">X</a></li>
-                    <li><a href="https://instagram.com/perryroper">Instagram</a></li>
-                    <li><a href="https://github.com/perry">GitHub</a></li>
-                </ul>
+                            <p class="bio-text">
+                                What began as an idea over an English Breakfast Tea in a Starbucks at Thapae Gate has grown into a team of 50+ serving thousands of customers across Bangkok and Chiang Mai.
+                            </p>
 
-                <h5>Free Tools</h5>
-                <ul>
-                    <li><a href="https://perry.io/mortgage-rate-comparison-calculator/">Mortgage Rate Comparison Calculator</a></li>
-                </ul>
+                            <p class="bio-text">
+                                These days, I focus on building efficient, intuitive systems, solving real-world problems, and continually pushing our team to raise the bar on how we serve.
+                            </p>
+
+                            <!-- Social Links -->
+                            <div class="social-links">
+                                <a href="mailto:hello@perry.io" class="social-link" aria-label="Email Perry Roper">
+                                    <i class="fas fa-envelope"></i>
+                                    Email
+                                </a>
+                                <a href="https://x.com/perryroper" target="_blank" rel="noopener" class="social-link" aria-label="Follow Perry Roper on X (Twitter)">
+                                    <i class="fab fa-x-twitter"></i>
+                                </a>
+                                <a href="https://instagram.com/perryroper" target="_blank" rel="noopener" class="social-link" aria-label="Follow Perry Roper on Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    Instagram
+                                </a>
+                                <a href="https://github.com/perry" target="_blank" rel="noopener" class="social-link" aria-label="View Perry Roper's GitHub profile">
+                                    <i class="fab fa-github"></i>
+                                    GitHub
+                                </a>
+                            </div>
+
+                            <!-- WashDrop Services Section -->
+                            <div class="mt-4">
+                                <h2 class="section-title">WashDrop Services</h2>
+                                <ul class="tools-list">
+                                    <li>
+                                        <a href="https://www.washdrop.com/laundry-bangkok/" target="_blank" rel="noopener">
+                                            <i class="fas fa-map-marker-alt me-2"></i>
+                                            Laundry in Bangkok
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.washdrop.com/laundry-chiang-mai/" target="_blank" rel="noopener">
+                                            <i class="fas fa-map-marker-alt me-2"></i>
+                                            Laundry in Chiang Mai
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Free Tools Section -->
+                            <div class="mt-4">
+                                <h2 class="section-title">Free Tools I've Built <small class="text-muted">(<i class="fas fa-exclamation-triangle me-2"></i>may contain traces of vibe coding)</small></h2>
+                                <ul class="tools-list">
+                                    <li>
+                                        <a href="/mortgage-rate-comparison-calculator/" target="_blank" rel="noopener">
+                                            <i class="fas fa-calculator me-2"></i>
+                                            Mortgage Rate Comparison Calculator
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- Bootstrap 5 JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
