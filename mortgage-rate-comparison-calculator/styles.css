@@ -1,0 +1,323 @@
+.provider-card {
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.provider-card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.rate-entry {
+    position: relative;
+    padding-right: 10px;
+}
+
+.rate-entry:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+.results-table {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.results-table th {
+    background-color: #f8f9fa;
+}
+
+.chart-container {
+    height: 400px;
+    margin: 2rem 0;
+}
+
+.savings-highlight {
+    color: #198754;
+    font-weight: bold;
+}
+
+.cost-highlight {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.form-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+/* New SEO Landing Page Styles */
+
+/* Hero Section */
+.hero-section {
+    background-color: #4f46e5 !important;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%) !important;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    color: white !important;
+    padding: 3rem 0;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    z-index: -1;
+}
+
+.hero-section * {
+    position: relative;
+    z-index: 1;
+    color: inherit;
+}
+
+.hero-section h1,
+.hero-section p,
+.hero-section span,
+.hero-section .btn {
+    color: white !important;
+}
+
+.hero-section .btn-light {
+    color: #333 !important;
+}
+
+.hero-stats {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+/* Feature Cards */
+.feature-card {
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-color: #0d6efd;
+}
+
+.feature-icon {
+    text-align: center;
+}
+
+/* Step Cards */
+.step-card {
+    transition: all 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-3px);
+}
+
+.step-number {
+    text-align: center;
+}
+
+/* Comparison Table */
+.comparison-table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table .table {
+    margin-bottom: 0;
+}
+
+.comparison-table th {
+    border-top: none;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+.comparison-table td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+/* Calculator Section Enhancements */
+#calculator .card {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+#calculator .card-header {
+    border-bottom: none;
+    font-weight: 600;
+}
+
+/* Input Group Styling */
+.input-group-text {
+    background-color: #f8f9fa;
+    border-color: #ced4da;
+    font-weight: 500;
+}
+
+/* FAQ Section */
+.accordion-button {
+    font-weight: 500;
+    background-color: #f8f9fa;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #e7f1ff;
+    border-color: #b6d7ff;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* General Improvements */
+
+.display-4, .display-5 {
+    font-weight: 700;
+}
+
+.lead {
+    font-size: 1.15rem;
+    font-weight: 400;
+}
+
+/* Button Enhancements */
+.btn-light:hover {
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-lg {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 60vh;
+        text-align: center;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .display-5 {
+        font-size: 2rem;
+    }
+
+    .hero-stats {
+        margin-top: 2rem;
+    }
+
+    .feature-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Provider Container Empty State */
+#providersContainer:empty {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#resultsContainer:empty {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Table Hover Effects */
+.table tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+/* Icon Styling */
+.fas, .far, .fab, .fal {
+    line-height: 1;
+}
+
+/* Shadow Utilities */
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+/* Text Utilities */
+.text-muted {
+    color: #6c757d !important;
+}
+
+/* Spacing Utilities */
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+/* Provider Card Enhancements */
+.provider-card .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.provider-header-clickable:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+    border-radius: 0.375rem;
+    margin: -0.25rem;
+    padding: 0.25rem;
+}

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Mortgage Comparison Tool - Compare Interest Rates & Save Thousands | Smart Home Financing</title>
+    <meta name="description" content="Free mortgage comparison calculator with flexible rate schedules. Compare mortgage lenders, calculate payments, and save thousands on your home loan. Handle complex rate structures and extra payments.">
+    <meta name="keywords" content="mortgage comparison, mortgage calculator, home loan comparison, interest rate calculator, mortgage rates, home financing, loan comparison tool, flexible rates">
+    <meta name="author" content="Smart Home Financing Tools">
+    <meta property="og:title" content="Free Mortgage Comparison Tool - Compare Rates & Save Money">
+    <meta property="og:description" content="Advanced mortgage comparison calculator that handles complex rate schedules. Compare multiple lenders and find the best mortgage deal for your home purchase.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Mortgage Comparison Tool - Compare Rates & Save Money">
+    <meta name="twitter:description" content="Advanced mortgage comparison calculator with flexible rate schedules. Compare lenders and save thousands on your mortgage.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Mortgage Comparison Tool",
+        "description": "Free online mortgage comparison calculator with support for complex rate schedules and flexible payment options",
+        "url": "#",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Compare multiple mortgage lenders",
+            "Flexible rate schedules",
+            "Complex rate structure support",
+            "Extra payment calculations",
+            "Detailed payment breakdowns"
+        ]
+    }
+    </script>
+
+    <link rel="shortcut icon" type="image/png" href="https://www.gravatar.com/avatar/5f97051969ba1dd0b58e2dff0da750ee.png?s=32">
+
+    <script defer data-domain="perry.io" src="https://a.wshlp.net/js/script.js"></script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section bg-gradient text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Find Your Perfect Mortgage Rate</h1>
+                    <p class="lead mb-4">Compare mortgage offers from multiple lenders with our advanced calculator. Handle complex rate schedules, calculate true costs, and save thousands on your home loan.</p>
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-warning me-2"></i>
+                            <span>100% Free Tool</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-warning me-2"></i>
+                            <span>No Registration Required</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-warning me-2"></i>
+                            <span>Instant Results</span>
+                        </div>
+                    </div>
+                    <a href="#calculator" class="btn btn-light btn-lg">Start Comparing Now</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-stats p-4 bg-white bg-opacity-10 rounded-3">
+                        <h3 class="h5 mb-3">Why Compare Mortgages?</h3>
+                        <div class="stat-item mb-3">
+                            <div class="h2 fw-bold text-warning">$50,000+</div>
+                            <div class="small">Average savings over loan lifetime</div>
+                        </div>
+                        <div class="stat-item mb-3">
+                            <div class="h2 fw-bold text-warning">0.5%</div>
+                            <div class="small">Rate difference can save thousands</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="h2 fw-bold text-warning">15 mins</div>
+                            <div class="small">Time to compare multiple offers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Why Our Mortgage Calculator Stands Out</h2>
+                    <p class="lead text-muted">Unlike basic mortgage calculators, our tool handles real-world complexity and gives you the complete picture.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-chart-line text-primary fa-2x"></i>
+                        </div>
+                        <h4>Flexible Rate Schedules</h4>
+                        <p class="text-muted">Handle complex mortgages with changing rates over time. Perfect for ARM loans, promotional rates, and step-up mortgages that other calculators can't manage.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-tachometer-alt text-success fa-2x"></i>
+                        </div>
+                        <h4>Fast & Accurate Results</h4>
+                        <p class="text-muted">Get precise calculations instantly with industry-standard amortization formulas. See exactly how each mortgage option affects your finances over time.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-calculator text-info fa-2x"></i>
+                        </div>
+                        <h4>Extra Payment Impact</h4>
+                        <p class="text-muted">See exactly how extra payments affect your mortgage across different lenders. Calculate time and interest savings with precision.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-chart-pie text-warning fa-2x"></i>
+                        </div>
+                        <h4>Total Cost Analysis</h4>
+                        <p class="text-muted">Go beyond monthly payments. Compare total interest paid, payoff times, and true cost of each mortgage option over the full loan term.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-shield-alt text-danger fa-2x"></i>
+                        </div>
+                        <h4>Privacy Focused</h4>
+                        <p class="text-muted">All calculations happen in your browser. No personal data stored, no sign-ups required, no tracking. Your financial information stays private.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-bolt text-primary fa-2x"></i>
+                        </div>
+                        <h4>Instant Comparisons</h4>
+                        <p class="text-muted">Real-time calculations as you type. Compare unlimited mortgage offers side-by-side with immediate results and clear rankings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">How It Works</h2>
+                    <p class="lead text-muted">Get accurate mortgage comparisons in three simple steps</p>
+                </div>
+            </div>
+
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="step-card p-4">
+                        <div class="step-number mb-3">
+                            <span class="badge bg-primary rounded-pill fs-4 px-3 py-2">1</span>
+                        </div>
+                        <h4>Enter Loan Details</h4>
+                        <p class="text-muted">Input your loan amount, term, and any extra payments you plan to make.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card p-4">
+                        <div class="step-number mb-3">
+                            <span class="badge bg-primary rounded-pill fs-4 px-3 py-2">2</span>
+                        </div>
+                        <h4>Add Mortgage Offers</h4>
+                        <p class="text-muted">Add each lender's offer with their specific rate schedules and terms.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card p-4">
+                        <div class="step-number mb-3">
+                            <span class="badge bg-primary rounded-pill fs-4 px-3 py-2">3</span>
+                        </div>
+                        <h4>Compare & Save</h4>
+                        <p class="text-muted">See detailed comparisons, total costs, and find the best deal for your situation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison vs Competitors -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Better Than Other Mortgage Calculators</h2>
+                    <p class="lead text-muted">See why thousands choose our advanced mortgage comparison tool</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="comparison-table">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th class="text-center">Our Tool</th>
+                                        <th class="text-center">Basic Calculators</th>
+                                        <th class="text-center">Bank Calculators</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Multiple Rate Periods</strong></td>
+                                        <td class="text-center"><i class="fas fa-check-circle text-success fs-5"></i></td>
+                                        <td class="text-center"><i class="fas fa-times-circle text-danger fs-5"></i></td>
+                                        <td class="text-center"><i class="fas fa-times-circle text-danger fs-5"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Compare Multiple Lenders</strong></td>
+                                        <td class="text-center"><i class="fas fa-check-circle text-success fs-5"></i></td>
+                                        <td class="text-center"><i class="fas fa-times-circle text-danger fs-5"></i></td>
+                                        <td class="text-center"><i class="fas fa-minus-circle text-warning fs-5"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Instant Calculations</strong></td>
+                                        <td class="text-center"><i class="fas fa-check-circle text-success fs-5"></i></td>
+                                        <td class="text-center"><i class="fas fa-minus-circle text-warning fs-5"></i></td>
+                                        <td class="text-center"><i class="fas fa-check-circle text-success fs-5"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>No Registration Required</strong></td>
+                                        <td class="text-center"><i class="fas fa-check-circle text-success fs-5"></i></td>
+                                        <td class="text-center"><i class="fas fa-check-circle text-success fs-5"></i></td>
+                                        <td class="text-center"><i class="fas fa-times-circle text-danger fs-5"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Unbiased Results</strong></td>
+                                        <td class="text-center"><i class="fas fa-check-circle text-success fs-5"></i></td>
+                                        <td class="text-center"><i class="fas fa-check-circle text-success fs-5"></i></td>
+                                        <td class="text-center"><i class="fas fa-times-circle text-danger fs-5"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Complex Rate Structures</strong></td>
+                                        <td class="text-center"><i class="fas fa-check-circle text-success fs-5"></i></td>
+                                        <td class="text-center"><i class="fas fa-times-circle text-danger fs-5"></i></td>
+                                        <td class="text-center"><i class="fas fa-minus-circle text-warning fs-5"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Start Your Mortgage Comparison</h2>
+                    <p class="lead text-muted">Enter your details below and add mortgage offers to compare</p>
+                </div>
+            </div>
+
+            <!-- Input Form -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="fas fa-home me-2"></i>Loan Details</h5>
+                </div>
+                <div class="card-body">
+                    <form id="mortgageForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="loanAmount" class="form-label">Loan Amount</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="currencySymbol">$</span>
+                                    <input type="number" class="form-control" id="loanAmount" required placeholder="500000">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="loanTerm" class="form-label">Loan Term (Years)</label>
+                                <input type="number" class="form-control" id="loanTerm" required placeholder="30">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="extraPayment" class="form-label">Extra Monthly Payment</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="extraCurrencySymbol">$</span>
+                                    <input type="number" class="form-control" id="extraPayment" value="0" placeholder="0">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="currency" class="form-label">Currency</label>
+                                <select class="form-select" id="currency">
+                                    <option value="USD">USD ($)</option>
+                                    <option value="THB">THB (฿)</option>
+                                    <option value="EUR">EUR (€)</option>
+                                    <option value="GBP">GBP (£)</option>
+                                    <option value="CAD">CAD (C$)</option>
+                                    <option value="AUD">AUD (A$)</option>
+                                    <option value="JPY">JPY (¥)</option>
+                                    <option value="CHF">CHF (Fr.)</option>
+                                    <option value="SGD">SGD (S$)</option>
+                                    <option value="HKD">HKD (HK$)</option>
+                                    <option value="NZD">NZD (NZ$)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Mortgage Providers -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="fas fa-building me-2"></i>Mortgage Providers</h5>
+                    <button class="btn btn-light btn-sm" id="addProvider"><i class="fas fa-plus-circle me-1"></i>Add Provider</button>
+                </div>
+                <div class="card-body">
+                    <div id="providersContainer">
+                        <div class="text-center text-muted py-4">
+                            <i class="fas fa-info-circle fs-1 mb-3"></i>
+                            <p>Click "Add Provider" to start comparing mortgage offers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Comparison Results</h5>
+                </div>
+                <div class="card-body">
+                    <div id="resultsContainer">
+                        <div class="text-center text-muted py-4">
+                            <i class="fas fa-calculator fs-1 mb-3"></i>
+                            <p>Results will appear here once you add mortgage providers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Frequently Asked Questions</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How accurate are the mortgage calculations?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our calculator uses industry-standard amortization formulas and provides highly accurate results. However, final mortgage terms may include additional fees, insurance, and taxes not captured in basic rate comparisons.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Can I save my mortgage comparisons?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Currently, all data is stored locally in your browser. This ensures privacy but means comparisons won't sync across devices. We recommend taking screenshots or notes of your best options.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    What makes this better than bank calculators?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Bank calculators are designed to promote their own products. Our tool is completely unbiased and can handle complex rate structures that most basic calculators can't manage, like ARM loans with multiple rate periods.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Is my financial information safe?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, completely. All calculations happen in your browser - no data is sent to our servers. We don't collect, store, or share any of your financial information.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Ready to Find Your Best Mortgage Rate?</h2>
+                    <p class="lead mb-4">Join thousands who have saved money by comparing mortgage offers with our advanced calculator.</p>
+                    <a href="#calculator" class="btn btn-light btn-lg">Start Comparing Now - It's Free</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Provider Template -->
+    <template id="providerTemplate">
+        <div class="provider-card card mb-3">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center flex-grow-1 provider-header-clickable" style="cursor: pointer;">
+                        <span class="me-2 collapse-indicator">▼</span>
+                        <h6 class="mb-0 provider-title">New Provider</h6>
+                        <small class="text-muted ms-3 provider-summary"></small>
+                    </div>
+                    <button class="btn btn-danger btn-sm remove-provider">Remove</button>
+                </div>
+            </div>
+            <div class="collapse">
+                <div class="card-body">
+                    <div class="provider-name mb-3">
+                        <input type="text" class="form-control" placeholder="Enter provider name">
+                    </div>
+                    <div class="rate-schedule">
+                        <!-- Rate periods will be added dynamically -->
+                    </div>
+                    <button class="btn btn-outline-primary btn-sm mt-2 add-rate">Add Rate Period</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
