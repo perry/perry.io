@@ -6,7 +6,7 @@
 
         <!-- SEO Meta Tags -->
         <title>Perry Roper - Founder. Builder. Father-to-be.</title>
-        <meta name="description" content="Perry Roper is the founder of WashDrop, one of Thailand's largest and most trusted laundry delivery services, serving thousands across Bangkok and Chiang Mai.">
+        <meta name="description" content="Perry Roper is the founder of WashDrop, Thailand's largest and most trusted on-demand laundry delivery service, serving thousands across Bangkok and Chiang Mai.">
         <meta name="author" content="Perry Roper">
         <meta name="robots" content="index, follow">
 
@@ -14,7 +14,7 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://perry.io/">
         <meta property="og:title" content="Perry Roper - Founder. Builder. Father-to-be.">
-        <meta property="og:description" content="Perry Roper is the founder of WashDrop, one of Thailand's largest and most trusted laundry delivery services, serving thousands across Bangkok and Chiang Mai.">
+        <meta property="og:description" content="Perry Roper is the founder of WashDrop, Thailand's largest and most trusted on-demand laundry delivery service. Started less than a year after moving to Chiang Mai, now serving thousands across Bangkok and Chiang Mai.">
         <meta property="og:image" content="https://www.gravatar.com/avatar/5f97051969ba1dd0b58e2dff0da750ee.jpg?s=1200">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="1200">
@@ -23,7 +23,7 @@
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="https://perry.io/">
         <meta property="twitter:title" content="Perry Roper - Founder. Builder. Father-to-be.">
-        <meta property="twitter:description" content="Perry Roper is the founder of WashDrop, one of Thailand's largest and most trusted laundry delivery services, serving thousands across Bangkok and Chiang Mai.">
+        <meta property="twitter:description" content="Perry Roper is the founder of WashDrop, Thailand's largest and most trusted on-demand laundry delivery service. Started less than a year after moving to Chiang Mai, now serving thousands across Bangkok and Chiang Mai.">
         <meta property="twitter:image" content="https://www.gravatar.com/avatar/5f97051969ba1dd0b58e2dff0da750ee.jpg?s=1200">
         <meta property="twitter:creator" content="@perryroper">
 
@@ -240,7 +240,7 @@
                 "addressLocality": "Chiang Mai",
                 "addressCountry": "Thailand"
             },
-            "description": "Founder of WashDrop, one of Thailand's largest and most trusted laundry delivery services, serving thousands across Bangkok and Chiang Mai."
+            "description": "Founder of WashDrop, Thailand's largest and most trusted on-demand laundry delivery service. Started less than a year after moving to Chiang Mai, now serving thousands across Bangkok and Chiang Mai."
         }
         </script>
     </head>
@@ -266,8 +266,16 @@
                 <div class="content-section">
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
-                                                        <p class="bio-text">
-                                Over a decade ago, I left the UK in search of warmer climes (I wouldn't be British if I didn't mention the weather, right?) and settled in Chiang Mai, Thailand. Not long after, I started WashDrop—now one of Thailand's largest and most trusted laundry delivery services.
+                            <p class="bio-text">
+                                Over a decade ago, I left the UK in search of warmer climes (I wouldn't be British if I didn't mention the weather, right?) and settled in Chiang Mai, Thailand. Less than a year later, I started WashDrop. We've since grown <span id="daysSinceStart"></span> into Thailand's largest and most trusted on-demand laundry delivery service.
+
+                                <script>
+                                    const startDate = new Date(1464915600 * 1000);
+                                    const today = new Date();
+                                    const diffTime = Math.abs(today - startDate);
+                                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                                    document.getElementById('daysSinceStart').innerHTML = `(over the last <strong>${diffDays.toLocaleString()} days</strong>)`;
+                                </script>
                             </p>
 
                             <p class="bio-text">
@@ -275,7 +283,7 @@
                             </p>
 
                             <p class="bio-text">
-                                These days, I focus on building efficient, intuitive systems, solving real-world problems, and continually pushing our team to raise the bar on how we serve.
+                                These days, my focus is on building efficient and intuitive systems, solving real-world problems, and guiding our team as we keep finding better ways to delight and serve our customers.
                             </p>
 
                             <!-- Social Links -->
@@ -318,7 +326,7 @@
 
                             <!-- Free Tools Section -->
                             <div class="mt-4">
-                                <h2 class="section-title">Free Tools I've Built <small class="text-muted">(<i class="fas fa-exclamation-triangle me-2"></i>may contain traces of vibe coding)</small></h2>
+                                <h2 class="section-title">Free Tools I've Built<br><small class="text-muted"><i class="fas fa-exclamation-triangle me-2"></i>may contain traces of vibe coding<i class="fas fa-exclamation-triangle ms-2"></i></small></h2>
                                 <ul class="tools-list">
                                     <li>
                                         <a href="/mortgage-rate-comparison-calculator/" target="_blank" rel="noopener">
