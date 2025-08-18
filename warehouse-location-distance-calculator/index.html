@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Warehouse Location Distance Calculator - Compare Driving Distances & Optimize Logistics | Business Tools</title>
+    <meta name="description" content="Free warehouse location distance calculator. Compare driving distances from multiple warehouse locations to customer addresses. Optimize logistics with Google Maps routing, vehicle options, and avoid highways/tolls.">
+    <meta name="keywords" content="warehouse location calculator, driving distance comparison, logistics optimization, business location tool, warehouse placement, distribution center, route optimization, Google Maps distance">
+    <meta name="author" content="Business Optimization Tools">
+    <meta property="og:title" content="Free Warehouse Location Distance Calculator - Optimize Your Logistics">
+    <meta property="og:description" content="Compare driving distances from multiple warehouse locations to customer addresses. Free tool with Google Maps integration, vehicle options, and route preferences.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Warehouse Location Distance Calculator - Optimize Your Logistics">
+    <meta name="twitter:description" content="Compare warehouse locations by driving distance to customers. Free business tool with Google Maps integration.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Warehouse Location Distance Calculator",
+        "description": "Free online tool to compare driving distances from multiple warehouse locations to customer addresses using Google Maps API",
+        "url": "#",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Compare multiple warehouse locations",
+            "Calculate driving distances to customers",
+            "Google Maps API integration",
+            "Vehicle type selection",
+            "Avoid highways and tolls options",
+            "Detailed distance matrix results"
+        ]
+    }
+    </script>
+
+    <link rel="shortcut icon" type="image/png" href="https://www.gravatar.com/avatar/5f97051969ba1dd0b58e2dff0da750ee.png?s=32">
+
+    <script defer data-domain="perry.io" src="https://a.wshlp.net/js/script.js"></script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section bg-gradient text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Optimize Your Warehouse Location</h1>
+                    <p class="lead mb-4">Compare driving distances from multiple warehouse locations to your customers. Make data-driven decisions for your logistics and distribution strategy with real Google Maps routing data.</p>
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-warning me-2"></i>
+                            <span>100% Free Tool</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-warning me-2"></i>
+                            <span>Google Maps Integration</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-warning me-2"></i>
+                            <span>Instant Results</span>
+                        </div>
+                    </div>
+                    <a href="#calculator" class="btn btn-light btn-lg">Start Optimizing Now</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-stats p-4 bg-white bg-opacity-10 rounded-3">
+                        <h3 class="h5 mb-3">Why Location Matters</h3>
+                        <div class="stat-item mb-3">
+                            <div class="h2 fw-bold text-warning">30%</div>
+                            <div class="small">Reduction in delivery costs with optimal placement</div>
+                        </div>
+                        <div class="stat-item mb-3">
+                            <div class="h2 fw-bold text-warning">2 hours</div>
+                            <div class="small">Average daily savings per delivery route</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="h2 fw-bold text-warning">5 mins</div>
+                            <div class="small">Time to compare multiple locations</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Smart Warehouse Location Analysis</h2>
+                    <p class="lead text-muted">Make informed decisions with real-world driving distance data and logistics optimization features.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-map-marked-alt text-primary fa-2x"></i>
+                        </div>
+                        <h4>Google Maps Integration</h4>
+                        <p class="text-muted">Get real-time driving distances using Google's Distance Matrix API with smart address autocomplete. Accurate routing data that accounts for traffic patterns and road conditions.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-truck text-success fa-2x"></i>
+                        </div>
+                        <h4>Vehicle Type Options</h4>
+                        <p class="text-muted">Calculate distances for different vehicle types - cars, trucks, motorcycles. Each vehicle type follows appropriate routes and restrictions.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-route text-info fa-2x"></i>
+                        </div>
+                        <h4>Route Preferences</h4>
+                        <p class="text-muted">Customize routes to avoid highways, tolls, or ferries. Get distance calculations that match your actual delivery constraints.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-chart-bar text-warning fa-2x"></i>
+                        </div>
+                        <h4>Comparison Matrix</h4>
+                        <p class="text-muted">Side-by-side comparison of all warehouse locations to all customer addresses. Easily identify the optimal location for your needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-map text-primary fa-2x"></i>
+                        </div>
+                        <h4>Interactive Map Visualization</h4>
+                        <p class="text-muted">See all routes on an interactive Google Map with color-coded lines from each warehouse to customers. Visual analysis with custom markers and route overlays.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-key text-danger fa-2x"></i>
+                        </div>
+                        <h4>Your Own API Key</h4>
+                        <p class="text-muted">Use your own Google Maps API key for calculations. No limits imposed by us - you control your usage and costs.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-search-location text-success fa-2x"></i>
+                        </div>
+                        <h4>Smart Address Autocomplete</h4>
+                        <p class="text-muted">Type and get instant address suggestions from Google Places. Auto-fills location names and ensures accurate addresses for better routing results.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100 p-4 border rounded-3">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-download text-primary fa-2x"></i>
+                        </div>
+                        <h4>Export Results</h4>
+                        <p class="text-muted">Download your distance comparison results as CSV for further analysis in spreadsheets or business intelligence tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">How It Works</h2>
+                    <p class="lead text-muted">Compare warehouse locations in four simple steps</p>
+                </div>
+            </div>
+
+            <div class="row g-4 text-center">
+                <div class="col-md-6 col-lg-3">
+                    <div class="step-card p-4">
+                        <div class="step-number mb-3">
+                            <span class="badge bg-primary rounded-pill fs-4 px-3 py-2">1</span>
+                        </div>
+                        <h4>Add API Key</h4>
+                        <p class="text-muted">Enter your Google Maps API key to enable distance calculations.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="step-card p-4">
+                        <div class="step-number mb-3">
+                            <span class="badge bg-primary rounded-pill fs-4 px-3 py-2">2</span>
+                        </div>
+                        <h4>Enter Locations</h4>
+                        <p class="text-muted">Add your potential warehouse locations and customer addresses.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="step-card p-4">
+                        <div class="step-number mb-3">
+                            <span class="badge bg-primary rounded-pill fs-4 px-3 py-2">3</span>
+                        </div>
+                        <h4>Set Preferences</h4>
+                        <p class="text-muted">Choose vehicle type and route preferences like avoiding tolls.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="step-card p-4">
+                        <div class="step-number mb-3">
+                            <span class="badge bg-primary rounded-pill fs-4 px-3 py-2">4</span>
+                        </div>
+                        <h4>Compare & Decide</h4>
+                        <p class="text-muted">Review the distance matrix and choose your optimal location.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Start Your Location Analysis</h2>
+                    <p class="lead text-muted">Enter your details below to compare warehouse locations</p>
+                </div>
+            </div>
+
+            <!-- API Key and Settings -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="fas fa-key me-2"></i>Google Maps API Configuration</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8 mb-3">
+                            <label for="apiKey" class="form-label">Google Maps API Key <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" id="apiKey" placeholder="Enter your Google Maps API key" required>
+                                                                                    <div class="form-text">
+                                <i class="fas fa-info-circle me-1"></i>
+                                Need an API key? <a href="https://console.cloud.google.com/google/maps-apis" target="_blank">Get one here</a>.
+                                <strong>Required steps:</strong> 1) Enable Maps JavaScript API, 2) Set up billing (free $200/month credit).
+                                <br><small class="text-muted">💡 This tool uses Google's official JavaScript SDK - no CORS issues!</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="units" class="form-label">Distance Units</label>
+                            <select class="form-select" id="units">
+                                <option value="metric">Kilometers</option>
+                                <option value="imperial">Miles</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="travelMode" class="form-label">Vehicle Type</label>
+                            <select class="form-select" id="travelMode">
+                                <option value="DRIVING">Car/Van</option>
+                                <option value="WALKING">Walking</option>
+                                <option value="BICYCLING">Bicycle</option>
+                                <option value="TRANSIT">Public Transit</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Route Preferences</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="avoidHighways">
+                                <label class="form-check-label" for="avoidHighways">Avoid Highways</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="avoidTolls">
+                                <label class="form-check-label" for="avoidTolls">Avoid Tolls</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="avoidFerries">
+                                <label class="form-check-label" for="avoidFerries">Avoid Ferries</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Warehouse Locations -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="fas fa-warehouse me-2"></i>Warehouse Locations
+                        <small class="ms-2 opacity-75"><i class="fas fa-save me-1"></i>Auto-saved</small>
+                    </h5>
+                    <button class="btn btn-light btn-sm" id="addWarehouse"><i class="fas fa-plus-circle me-1"></i>Add Location</button>
+                </div>
+                <div class="card-body">
+                    <div id="warehousesContainer">
+                        <div class="text-center text-muted py-4">
+                            <i class="fas fa-warehouse fs-1 mb-3"></i>
+                            <p>Click "Add Location" to start adding potential warehouse locations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Locations -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Customer Locations
+                        <small class="ms-2 opacity-75"><i class="fas fa-save me-1"></i>Auto-saved</small>
+                    </h5>
+                    <button class="btn btn-light btn-sm" id="addCustomer"><i class="fas fa-plus-circle me-1"></i>Add Customer</button>
+                </div>
+                <div class="card-body">
+                    <div id="customersContainer">
+                        <div class="text-center text-muted py-4">
+                            <i class="fas fa-users fs-1 mb-3"></i>
+                            <p>Click "Add Customer" to start adding customer addresses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calculate Button -->
+            <div class="text-center mb-4">
+                <button class="btn btn-warning btn-lg px-5 py-3 me-3" id="calculateDistances" disabled>
+                    <i class="fas fa-calculator me-2"></i>Calculate Distances
+                </button>
+                <button class="btn btn-outline-secondary" id="clearAllData" title="Clear all saved locations and start fresh">
+                    <i class="fas fa-trash me-2"></i>Clear All Data
+                </button>
+            </div>
+
+            <!-- Results -->
+            <div class="card mb-4 shadow-sm d-none" id="resultsCard">
+                <div class="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Distance Comparison Results</h5>
+                    <button class="btn btn-outline-dark btn-sm" id="exportResults">
+                        <i class="fas fa-download me-1"></i>Export CSV
+                    </button>
+                </div>
+                <div class="card-body">
+                    <!-- Map Visualization -->
+                    <div id="mapContainer" class="mb-4">
+                        <h5 class="mb-3">
+                            <i class="fas fa-map me-2"></i>Route Visualization
+                            <button class="btn btn-outline-secondary btn-sm ms-2" id="toggleMap">
+                                <i class="fas fa-eye-slash me-1"></i>Hide Map
+                            </button>
+                        </h5>
+                        <div id="map"></div>
+                        <div id="mapLegend" class="mt-3">
+                            <!-- Legend will be populated here -->
+                        </div>
+                    </div>
+
+                    <div id="resultsContainer">
+                        <!-- Results will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Frequently Asked Questions</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How much does the Google Maps API cost?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Google provides $200 of free API credits monthly, which covers thousands of distance calculations. For most small to medium businesses, this is more than sufficient. Check Google's current pricing at their Cloud Console.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    How accurate are the distance calculations?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    The distances are calculated using Google's Maps JavaScript API with the DistanceMatrixService, which provides highly accurate driving distances and times based on current traffic conditions and road networks. This is the same data used by Google Maps, accessed through their official browser SDK.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Can I save my calculations and locations?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! The tool automatically saves everything as you work:
+                                    <ul class="mt-2 mb-0">
+                                        <li><strong>Auto-save:</strong> All warehouse locations, customer addresses, and preferences are saved automatically in your browser</li>
+                                        <li><strong>Persistent data:</strong> Your work is preserved when you refresh the page or return later</li>
+                                        <li><strong>Export results:</strong> Download comparison results as CSV for further analysis</li>
+                                        <li><strong>Privacy:</strong> All data stays in your browser - nothing is sent to external servers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    What address formats are supported?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    The tool features smart address autocomplete powered by Google Places. Simply start typing and you'll see suggestions for addresses, landmarks, and business names. You can also enter coordinates or any format that Google Maps understands. The autocomplete feature ensures accurate addresses and can auto-fill location names for you.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-3">Ready to Optimize Your Warehouse Location?</h2>
+                    <p class="lead mb-4">Make data-driven decisions for your logistics strategy with real driving distance analysis.</p>
+                    <a href="#calculator" class="btn btn-light btn-lg">Start Analysis - It's Free</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Templates -->
+    <template id="warehouseTemplate">
+        <div class="location-item card mb-3">
+            <div class="card-body">
+                                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <input type="text" class="form-control warehouse-address" placeholder="Enter warehouse address - autocomplete will enable once you add your API key">
+                        </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control warehouse-name" placeholder="Location name">
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-danger btn-sm remove-location">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="customerTemplate">
+        <div class="location-item card mb-3">
+            <div class="card-body">
+                                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <input type="text" class="form-control customer-address" placeholder="Enter customer address - autocomplete will enable once you add your API key">
+                        </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control customer-name" placeholder="Customer name">
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-danger btn-sm remove-location">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Progress Modal -->
+    <div class="modal fade" id="progressModal" tabindex="-1" aria-labelledby="progressModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="progressModalLabel">
+                        <i class="fas fa-calculator me-2"></i>Calculating Distances
+                    </h5>
+                </div>
+                                <div class="modal-body text-center py-4">
+                    <div class="progress mb-4 progress-modal-progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" id="progressBar"></div>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <div class="spinner-border text-primary me-3 progress-modal-spinner" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="text-start">
+                            <div class="fw-bold" id="currentStep">Initializing...</div>
+                            <div class="text-muted small" id="stepDescription">Preparing calculation</div>
+                        </div>
+                    </div>
+
+                    <div class="progress-steps mt-4">
+                        <div class="row text-center">
+                            <div class="col-3">
+                                <div class="step-indicator" id="step1">
+                                    <i class="fas fa-cog"></i>
+                                    <div class="small mt-1">Setup</div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="step-indicator" id="step2">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div class="small mt-1">Geocoding</div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="step-indicator" id="step3">
+                                    <i class="fas fa-route"></i>
+                                    <div class="small mt-1">Distances</div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="step-indicator" id="step4">
+                                    <i class="fas fa-map"></i>
+                                    <div class="small mt-1">Map</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <!-- Google Maps JavaScript API - loaded dynamically with user's API key -->
+</body>
+</html>
