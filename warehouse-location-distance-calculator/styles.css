@@ -632,3 +632,8 @@ html {
     font-size: 0.9rem;
     font-weight: 500;
 }
+
+/* Share Button Initial State */
+.share-btn-hidden {
+    display: none !important;
+}

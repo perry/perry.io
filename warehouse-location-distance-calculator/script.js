@@ -25,7 +25,12 @@ class WarehouseDistanceCalculator {
     init() {
         // Wrap initialization in try-catch to handle any Google Maps related errors gracefully
         try {
-            this.loadSavedData();
+            // Check for shared configuration in URL first, then load saved data
+            if (this.loadSharedConfiguration()) {
+                console.log('Loaded shared configuration from URL');
+            } else {
+                this.loadSavedData();
+            }
             this.bindEvents();
             this.updateCalculateButton();
         } catch (error) {
@@ -373,6 +378,11 @@ class WarehouseDistanceCalculator {
         document.getElementById('toggleMap').addEventListener('click', () => {
             this.toggleMapVisibility();
         });
+
+        // Share button
+        document.getElementById('shareBtn').addEventListener('click', () => {
+            this.generateShareUrl();
+        });
     }
 
         addWarehouse() {
@@ -550,6 +560,15 @@ class WarehouseDistanceCalculator {
             calculateBtn.innerHTML = '<i class="fas fa-calculator me-2"></i>Add Locations to Calculate';
         } else {
             calculateBtn.innerHTML = '<i class="fas fa-calculator me-2"></i>Calculate Distances';
+        }
+
+        // Update share button visibility
+        const shareBtn = document.getElementById('shareBtn');
+        const hasDataToShare = hasWarehouses && hasCustomers;
+        if (hasDataToShare) {
+            shareBtn.classList.remove('share-btn-hidden');
+        } else {
+            shareBtn.classList.add('share-btn-hidden');
         }
     }
 
@@ -1170,7 +1189,7 @@ class WarehouseDistanceCalculator {
         }
     }
 
-    escapeCsvValue(value) {
+        escapeCsvValue(value) {
         // Convert to string and handle null/undefined
         const str = String(value || '');
 
@@ -1180,6 +1199,302 @@ class WarehouseDistanceCalculator {
         }
 
         return str;
+    }
+
+    // === SHARE FUNCTIONALITY ===
+
+    generateShareUrl() {
+        try {
+            const config = this.encodeConfiguration();
+            if (!config) {
+                this.showAlert('No data to share. Please add warehouses and customers first.', 'warning');
+                return;
+            }
+
+            const baseUrl = window.location.href.split('?')[0];
+            const shareUrl = `${baseUrl}?share=${encodeURIComponent(config)}`;
+
+            this.showShareModal(shareUrl);
+        } catch (error) {
+            console.error('Error generating share URL:', error);
+            this.showAlert('Failed to generate share URL. Please try again.', 'danger');
+        }
+    }
+
+    loadSharedConfiguration() {
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const sharedConfig = urlParams.get('share');
+
+            if (!sharedConfig) {
+                return false; // No shared config found
+            }
+
+            const config = this.decodeConfiguration(sharedConfig);
+            if (!config) {
+                console.warn('Invalid shared configuration');
+                return false;
+            }
+
+            // Set loading flag to prevent auto-save during loading
+            this.isLoading = true;
+
+            // Load API key and settings
+            if (config.apiKey) {
+                document.getElementById('apiKey').value = config.apiKey;
+                this.apiKey = config.apiKey;
+                localStorage.setItem('warehouse_calculator_api_key', this.apiKey);
+            }
+
+            if (config.settings) {
+                const { units, travelMode, avoidHighways, avoidTolls, avoidFerries } = config.settings;
+
+                if (units) {
+                    document.getElementById('units').value = units;
+                    localStorage.setItem('warehouse_calculator_units', units);
+                }
+
+                if (travelMode) {
+                    document.getElementById('travelMode').value = travelMode;
+                    localStorage.setItem('warehouse_calculator_travel_mode', travelMode);
+                }
+
+                if (typeof avoidHighways === 'boolean') {
+                    document.getElementById('avoidHighways').checked = avoidHighways;
+                    localStorage.setItem('warehouse_calculator_avoid_highways', avoidHighways);
+                }
+
+                if (typeof avoidTolls === 'boolean') {
+                    document.getElementById('avoidTolls').checked = avoidTolls;
+                    localStorage.setItem('warehouse_calculator_avoid_tolls', avoidTolls);
+                }
+
+                if (typeof avoidFerries === 'boolean') {
+                    document.getElementById('avoidFerries').checked = avoidFerries;
+                    localStorage.setItem('warehouse_calculator_avoid_ferries', avoidFerries);
+                }
+            }
+
+            // Load warehouses
+            if (config.warehouses && config.warehouses.length > 0) {
+                config.warehouses.forEach(warehouse => {
+                    this.addWarehouseWithoutSave();
+                    const container = document.getElementById('warehousesContainer');
+                    const lastWarehouse = container.lastElementChild;
+                    const addressInput = lastWarehouse._addressInput;
+                    const nameInput = lastWarehouse._nameInput;
+
+                    if (addressInput && nameInput) {
+                        addressInput.value = warehouse.address || '';
+                        nameInput.value = warehouse.name || '';
+                    }
+                });
+            }
+
+            // Load customers
+            if (config.customers && config.customers.length > 0) {
+                config.customers.forEach(customer => {
+                    this.addCustomerWithoutSave();
+                    const container = document.getElementById('customersContainer');
+                    const lastCustomer = container.lastElementChild;
+                    const addressInput = lastCustomer._addressInput;
+                    const nameInput = lastCustomer._nameInput;
+
+                    if (addressInput && nameInput) {
+                        addressInput.value = customer.address || '';
+                        nameInput.value = customer.name || '';
+                    }
+                });
+            }
+
+            // Finish loading
+            this.isLoading = false;
+
+            // Save loaded data to localStorage
+            this.saveDataToLocalStorage();
+
+            // Auto-calculate if API key is present and we have data
+            if (this.apiKey && config.warehouses?.length > 0 && config.customers?.length > 0) {
+                setTimeout(() => {
+                    this.autoCalculateAndScroll();
+                }, 1000); // Small delay to let UI settle
+            }
+
+            // Clean URL by removing the share parameter
+            const cleanUrl = window.location.href.split('?')[0];
+            window.history.replaceState({}, document.title, cleanUrl);
+
+            return true;
+        } catch (error) {
+            console.error('Error loading shared configuration:', error);
+            this.showAlert('Failed to load shared configuration.', 'danger');
+            return false;
+        }
+    }
+
+    encodeConfiguration() {
+        // Collect current warehouses
+        const warehouses = [];
+        const warehouseItems = document.querySelectorAll('#warehousesContainer .location-item');
+        warehouseItems.forEach(item => {
+            const address = item.querySelector('.warehouse-address').value.trim();
+            const name = item.querySelector('.warehouse-name').value.trim();
+            if (address || name) {
+                warehouses.push({ address, name });
+            }
+        });
+
+        // Collect current customers
+        const customers = [];
+        const customerItems = document.querySelectorAll('#customersContainer .location-item');
+        customerItems.forEach(item => {
+            const address = item.querySelector('.customer-address').value.trim();
+            const name = item.querySelector('.customer-name').value.trim();
+            if (address || name) {
+                customers.push({ address, name });
+            }
+        });
+
+        // Collect settings
+        const settings = {
+            units: document.getElementById('units').value,
+            travelMode: document.getElementById('travelMode').value,
+            avoidHighways: document.getElementById('avoidHighways').checked,
+            avoidTolls: document.getElementById('avoidTolls').checked,
+            avoidFerries: document.getElementById('avoidFerries').checked
+        };
+
+        if (warehouses.length === 0 || customers.length === 0) {
+            return null;
+        }
+
+        const config = {
+            warehouses,
+            customers,
+            settings,
+            apiKey: this.apiKey // Include API key for auto-calculation
+        };
+
+        // Compress and encode (handle Unicode characters properly)
+        const jsonString = JSON.stringify(config);
+        const utf8Bytes = encodeURIComponent(jsonString);
+        return btoa(utf8Bytes);
+    }
+
+        decodeConfiguration(encodedConfig) {
+                try {
+            // Decode base64 and handle Unicode characters properly
+            const utf8Bytes = atob(encodedConfig);
+            const jsonString = decodeURIComponent(utf8Bytes);
+            const decodedConfig = JSON.parse(jsonString);
+
+            // Validate structure
+            if (!decodedConfig.warehouses || !decodedConfig.customers) {
+                return null;
+            }
+
+            return decodedConfig;
+        } catch (error) {
+            console.error('Error decoding configuration:', error);
+            return null;
+        }
+    }
+
+    autoCalculateAndScroll() {
+        // Trigger calculation
+        this.calculateDistances().then(() => {
+            // Scroll to results after calculation completes
+            setTimeout(() => {
+                const resultsSection = document.getElementById('resultsCard');
+                if (resultsSection) {
+                    resultsSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 500); // Small delay to let results render
+        }).catch(error => {
+            console.error('Auto-calculation failed:', error);
+        });
+    }
+
+    showShareModal(shareUrl) {
+        // Create modal content
+        const modalContent = `
+            <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="shareModalLabel">
+                                <i class="fas fa-share-alt me-2"></i>Share Configuration
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Share this URL to let others use your warehouse and customer configuration:</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="shareUrlInput" value="${shareUrl}" readonly>
+                                <button class="btn btn-outline-secondary" type="button" id="copyUrlBtn">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="mt-3">
+                                <small class="text-muted">
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    When opened, this link will automatically load your configuration and start calculating distances.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Remove existing modal if present
+        const existingModal = document.getElementById('shareModal');
+        if (existingModal) {
+            existingModal.remove();
+        }
+
+        // Add modal to page
+        document.body.insertAdjacentHTML('beforeend', modalContent);
+
+        // Show modal
+        const modal = new bootstrap.Modal(document.getElementById('shareModal'));
+        modal.show();
+
+        // Add copy functionality
+        document.getElementById('copyUrlBtn').addEventListener('click', () => {
+            const urlInput = document.getElementById('shareUrlInput');
+            urlInput.select();
+            urlInput.setSelectionRange(0, 99999); // For mobile devices
+
+            try {
+                document.execCommand('copy');
+                const copyBtn = document.getElementById('copyUrlBtn');
+                const originalHtml = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                copyBtn.classList.remove('btn-outline-secondary');
+                copyBtn.classList.add('btn-success');
+
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalHtml;
+                    copyBtn.classList.remove('btn-success');
+                    copyBtn.classList.add('btn-outline-secondary');
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy URL:', err);
+                this.showAlert('Failed to copy URL. Please copy manually.', 'warning');
+            }
+        });
+
+        // Clean up modal when hidden
+        document.getElementById('shareModal').addEventListener('hidden.bs.modal', () => {
+            document.getElementById('shareModal').remove();
+        });
     }
 
         exportToCsv() {

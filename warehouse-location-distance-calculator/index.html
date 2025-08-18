@@ -336,6 +336,9 @@
                 <button class="btn btn-warning btn-lg px-5 py-3 me-3" id="calculateDistances" disabled>
                     <i class="fas fa-calculator me-2"></i>Calculate Distances
                 </button>
+                <button class="btn btn-outline-primary me-3 share-btn-hidden" id="shareBtn">
+                    <i class="fas fa-share-alt me-2"></i>Share
+                </button>
                 <button class="btn btn-outline-secondary" id="clearAllData" title="Clear all saved locations and start fresh">
                     <i class="fas fa-trash me-2"></i>Clear All Data
                 </button>
@@ -435,6 +438,19 @@
                             <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
                                     The tool features smart address autocomplete powered by Google Places. Simply start typing and you'll see suggestions for addresses, landmarks, and business names. You can also enter coordinates or any format that Google Maps understands. The autocomplete feature ensures accurate addresses and can auto-fill location names for you.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Can I share my configuration with others?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! Once you've added warehouses and customers, a "Share" button will appear. Click it to generate a shareable URL that includes your complete configuration. When someone opens that link, it will automatically load your warehouses, customers, and settings, then run the calculations and scroll to the results. It's perfect for sharing analysis with colleagues or clients.
                                 </div>
                             </div>
                         </div>
